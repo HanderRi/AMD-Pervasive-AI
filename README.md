@@ -1,3 +1,3 @@
 # AMD-Pervasive-AI
-  the code of project
+  The code of project
   
