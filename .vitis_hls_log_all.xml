@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file Deit_cpp/src/conv.cpp&#xD;&#xA;Resolution: For help on HLS 200-471 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-471.html" projectName="Deit_cpp" solutionName="solution1" date="2024-07-31T16:50:03.737+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 214-109] As the loop counter is not increased by 1, the compiler may not successfully process the dataflow loop (Deit_cpp/src/conv.cpp:171:273)&#xD;&#xA;Resolution: For help on HLS 214-109 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-109.html" projectName="Deit_cpp" solutionName="solution1" date="2024-07-31T16:49:58.279+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
