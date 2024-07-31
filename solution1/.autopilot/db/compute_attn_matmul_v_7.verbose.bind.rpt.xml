@@ -1,0 +1,58 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'compute_attn_matmul_v_7'" level="0">
+<item name = "Date">Wed Jul 31 17:01:19 2024
+</item>
+<item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
+<item name = "Project">Deit_cpp</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xck26-sfvc784-2LV-c</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.156 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">102179, 102179, 1.022 ms, 1.022 ms, 102179, 102179, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_exp_32_10_s_fu_385">exp_32_10_s, 5, 5, 50.000 ns, 50.000 ns, 1, 1, yes</column>
+<column name="grp_exp_32_10_s_fu_402">exp_32_10_s, 5, 5, 50.000 ns, 50.000 ns, 1, 1, yes</column>
+<column name="grp_exp_32_10_s_fu_419">exp_32_10_s, 5, 5, 50.000 ns, 50.000 ns, 1, 1, yes</column>
+<column name="grp_exp_32_10_s_fu_436">exp_32_10_s, 5, 5, 50.000 ns, 50.000 ns, 1, 1, yes</column>
+<column name="grp_exp_32_10_s_fu_453">exp_32_10_s, 5, 5, 50.000 ns, 50.000 ns, 1, 1, yes</column>
+<column name="grp_exp_32_10_s_fu_470">exp_32_10_s, 5, 5, 50.000 ns, 50.000 ns, 1, 1, yes</column>
+<column name="grp_exp_32_10_s_fu_487">exp_32_10_s, 5, 5, 50.000 ns, 50.000 ns, 1, 1, yes</column>
+<column name="grp_exp_32_10_s_fu_504">exp_32_10_s, 5, 5, 50.000 ns, 50.000 ns, 1, 1, yes</column>
+<column name="grp_exp_32_10_s_fu_521">exp_32_10_s, 5, 5, 50.000 ns, 50.000 ns, 1, 1, yes</column>
+<column name="grp_exp_32_10_s_fu_538">exp_32_10_s, 5, 5, 50.000 ns, 50.000 ns, 1, 1, yes</column>
+<column name="grp_exp_32_10_s_fu_555">exp_32_10_s, 5, 5, 50.000 ns, 50.000 ns, 1, 1, yes</column>
+<column name="grp_exp_32_10_s_fu_572">exp_32_10_s, 5, 5, 50.000 ns, 50.000 ns, 1, 1, yes</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- _ln432_for_block_attn_patch__ln434_for_each_v_patch__ln436_for_block_dim">102177, 102177, 11, 1, 1, 102168, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

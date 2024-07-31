@@ -1,0 +1,5 @@
+1 warning and 27 errors generated.
+Error while processing E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\gelu.pp.0.cpp.
+clang-tidy applied 155 of 155 suggested fixes.
+Suppressed 46 warnings (45 in non-user code, 1 with check filters).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.

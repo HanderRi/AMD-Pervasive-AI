@@ -1,0 +1,155 @@
+
+
+================================================================
+== Vitis HLS Report for 'load_linear_bias_ap_fixed_16_5_5_3_0_s'
+================================================================
+* Date:           Wed Jul 31 17:01:37 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        Deit_cpp
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.03>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%out_dim_offset_read = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %out_dim_offset"   --->   Operation 3 'read' 'out_dim_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%bias_src_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %bias_src"   --->   Operation 4 'read' 'bias_src_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%out_dim_offset_cast_cast_cast_cast_cast = sext i9 %out_dim_offset_read"   --->   Operation 5 'sext' 'out_dim_offset_cast_cast_cast_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%out_dim_offset_cast_cast_cast_cast_cast_cast = zext i10 %out_dim_offset_cast_cast_cast_cast_cast"   --->   Operation 6 'zext' 'out_dim_offset_cast_cast_cast_cast_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.78ns)   --->   "%add_ln70 = add i11 %out_dim_offset_cast_cast_cast_cast_cast_cast, i11 15" [Deit_cpp/src/../include/util.hpp:70]   --->   Operation 7 'add' 'add_ln70' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%trunc_ln130_1 = partselect i7 @_ssdm_op_PartSelect.i7.i11.i32.i32, i11 %add_ln70, i32 4, i32 10" [Deit_cpp/src/linear.cpp:130]   --->   Operation 8 'partselect' 'trunc_ln130_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%trunc_ln130 = trunc i64 %bias_src_read" [Deit_cpp/src/linear.cpp:130]   --->   Operation 9 'trunc' 'trunc_ln130' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.78ns)   --->   "%add_ln130 = add i5 %trunc_ln130, i5 2" [Deit_cpp/src/linear.cpp:130]   --->   Operation 10 'add' 'add_ln130' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 11 [1/1] (0.78ns)   --->   "%add_ln130_14 = add i5 %trunc_ln130, i5 4" [Deit_cpp/src/linear.cpp:130]   --->   Operation 11 'add' 'add_ln130_14' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.78ns)   --->   "%add_ln130_15 = add i5 %trunc_ln130, i5 6" [Deit_cpp/src/linear.cpp:130]   --->   Operation 12 'add' 'add_ln130_15' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (0.78ns)   --->   "%add_ln130_16 = add i5 %trunc_ln130, i5 8" [Deit_cpp/src/linear.cpp:130]   --->   Operation 13 'add' 'add_ln130_16' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.78ns)   --->   "%add_ln130_17 = add i5 %trunc_ln130, i5 10" [Deit_cpp/src/linear.cpp:130]   --->   Operation 14 'add' 'add_ln130_17' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 15 [1/1] (0.78ns)   --->   "%add_ln130_18 = add i5 %trunc_ln130, i5 12" [Deit_cpp/src/linear.cpp:130]   --->   Operation 15 'add' 'add_ln130_18' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.78ns)   --->   "%add_ln130_19 = add i5 %trunc_ln130, i5 14" [Deit_cpp/src/linear.cpp:130]   --->   Operation 16 'add' 'add_ln130_19' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 17 [1/1] (0.19ns)   --->   "%xor_ln130 = xor i5 %trunc_ln130, i5 16" [Deit_cpp/src/linear.cpp:130]   --->   Operation 17 'xor' 'xor_ln130' <Predicate = true> <Delay = 0.19> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.19> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 18 [1/1] (0.78ns)   --->   "%add_ln130_20 = add i5 %trunc_ln130, i5 18" [Deit_cpp/src/linear.cpp:130]   --->   Operation 18 'add' 'add_ln130_20' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 19 [1/1] (0.78ns)   --->   "%add_ln130_21 = add i5 %trunc_ln130, i5 20" [Deit_cpp/src/linear.cpp:130]   --->   Operation 19 'add' 'add_ln130_21' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.78ns)   --->   "%add_ln130_22 = add i5 %trunc_ln130, i5 22" [Deit_cpp/src/linear.cpp:130]   --->   Operation 20 'add' 'add_ln130_22' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 21 [1/1] (0.78ns)   --->   "%add_ln130_23 = add i5 %trunc_ln130, i5 24" [Deit_cpp/src/linear.cpp:130]   --->   Operation 21 'add' 'add_ln130_23' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (0.78ns)   --->   "%add_ln130_24 = add i5 %trunc_ln130, i5 26" [Deit_cpp/src/linear.cpp:130]   --->   Operation 22 'add' 'add_ln130_24' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (0.78ns)   --->   "%add_ln130_25 = add i5 %trunc_ln130, i5 28" [Deit_cpp/src/linear.cpp:130]   --->   Operation 23 'add' 'add_ln130_25' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 24 [1/1] (0.78ns)   --->   "%add_ln130_26 = add i5 %trunc_ln130, i5 30" [Deit_cpp/src/linear.cpp:130]   --->   Operation 24 'add' 'add_ln130_26' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %trunc_ln130, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 25 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%shl_ln137_s = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln130, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 26 'bitconcatenate' 'shl_ln137_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%shl_ln137_15 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln130_14, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 27 'bitconcatenate' 'shl_ln137_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%shl_ln137_16 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln130_15, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 28 'bitconcatenate' 'shl_ln137_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%shl_ln137_17 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln130_16, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 29 'bitconcatenate' 'shl_ln137_17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%shl_ln137_18 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln130_17, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 30 'bitconcatenate' 'shl_ln137_18' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%shl_ln137_19 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln130_18, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 31 'bitconcatenate' 'shl_ln137_19' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%shl_ln137_20 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln130_19, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 32 'bitconcatenate' 'shl_ln137_20' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%shl_ln137_21 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %xor_ln130, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 33 'bitconcatenate' 'shl_ln137_21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%shl_ln137_22 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln130_20, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 34 'bitconcatenate' 'shl_ln137_22' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%shl_ln137_23 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln130_21, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 35 'bitconcatenate' 'shl_ln137_23' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%shl_ln137_24 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln130_22, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 36 'bitconcatenate' 'shl_ln137_24' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%shl_ln137_25 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln130_23, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 37 'bitconcatenate' 'shl_ln137_25' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%shl_ln137_26 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln130_24, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 38 'bitconcatenate' 'shl_ln137_26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%shl_ln137_27 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln130_25, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 39 'bitconcatenate' 'shl_ln137_27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%shl_ln137_28 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln130_26, i3 0" [Deit_cpp/src/linear.cpp:137]   --->   Operation 40 'bitconcatenate' 'shl_ln137_28' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [2/2] (1.24ns)   --->   "%call_ln130 = call void @load_linear_bias<ap_fixed<16, 5, 5, 3, 0> >_Pipeline__ln130_for_each_src_block, i7 %trunc_ln130_1, i64 %bias_src_read, i256 %weights, i8 %shl_ln, i8 %shl_ln137_s, i8 %shl_ln137_15, i8 %shl_ln137_16, i8 %shl_ln137_17, i8 %shl_ln137_18, i8 %shl_ln137_19, i8 %shl_ln137_20, i8 %shl_ln137_21, i8 %shl_ln137_22, i8 %shl_ln137_23, i8 %shl_ln137_24, i8 %shl_ln137_25, i8 %shl_ln137_26, i8 %shl_ln137_27, i8 %shl_ln137_28, i288 %bias_dst" [Deit_cpp/src/linear.cpp:130]   --->   Operation 41 'call' 'call_ln130' <Predicate = true> <Delay = 1.24> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %weights, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_11, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [1/2] (0.00ns)   --->   "%call_ln130 = call void @load_linear_bias<ap_fixed<16, 5, 5, 3, 0> >_Pipeline__ln130_for_each_src_block, i7 %trunc_ln130_1, i64 %bias_src_read, i256 %weights, i8 %shl_ln, i8 %shl_ln137_s, i8 %shl_ln137_15, i8 %shl_ln137_16, i8 %shl_ln137_17, i8 %shl_ln137_18, i8 %shl_ln137_19, i8 %shl_ln137_20, i8 %shl_ln137_21, i8 %shl_ln137_22, i8 %shl_ln137_23, i8 %shl_ln137_24, i8 %shl_ln137_25, i8 %shl_ln137_26, i8 %shl_ln137_27, i8 %shl_ln137_28, i288 %bias_dst" [Deit_cpp/src/linear.cpp:130]   --->   Operation 43 'call' 'call_ln130' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%ret_ln155 = ret" [Deit_cpp/src/linear.cpp:155]   --->   Operation 44 'ret' 'ret_ln155' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 2.03ns
+The critical path consists of the following:
+	wire read operation ('bias_src_read') on port 'bias_src' [6]  (0 ns)
+	'add' operation ('add_ln130_22', Deit_cpp/src/linear.cpp:130) [23]  (0.789 ns)
+	'call' operation ('call_ln130', Deit_cpp/src/linear.cpp:130) to 'load_linear_bias<ap_fixed<16, 5, 5, 3, 0> >_Pipeline__ln130_for_each_src_block' [44]  (1.24 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

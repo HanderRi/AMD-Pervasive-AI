@@ -1,0 +1,52 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'compute_q_matmul_k'" level="0">
+<item name = "Date">Wed Jul 31 17:01:03 2024
+</item>
+<item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
+<item name = "Project">Deit_cpp</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xck26-sfvc784-2LV-c</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.300 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">102241, 102241, 1.022 ms, 1.022 ms, 102179, 102179, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_read_x_fu_152">read_x, 3107, 3107, 31.070 us, 31.070 us, 3107, 3107, no</column>
+<column name="grp_read_k_v_fu_161">read_k_v, 102178, 102178, 1.022 ms, 1.022 ms, 102178, 102178, no</column>
+<column name="grp_compute_q_matmul_k_5_fu_170">compute_q_matmul_k_5, 102174, 102174, 1.022 ms, 1.022 ms, 102174, 102174, no</column>
+<column name="grp_finalize_attn_fu_179">finalize_attn, 17087, 17087, 0.171 ms, 0.171 ms, 17087, 17087, no</column>
+<column name="call_ln293_entry_proc_fu_198">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
+<column name="grp_write_attn_fu_208">write_attn, 17038, 17038, 0.170 ms, 0.170 ms, 17038, 17038, no</column>
+<column name="grp_write_attn_softmax_info_fu_216">write_attn_softmax_info, 140, 140, 1.400 us, 1.400 us, 140, 140, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

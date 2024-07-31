@@ -1,0 +1,327 @@
+<stg><name>load_norms</name>
+
+
+<trans_list>
+
+<trans id="25" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="26" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="27" from="3" to="4">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="28" from="4" to="5">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="29" from="5" to="6">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="30" from="6" to="7">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="31" from="7" to="8">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="9" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="7" bw="64" op_0_bw="64" op_1_bw="64">
+<![CDATA[
+entry:1 %norm_bias_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %norm_bias
+
+]]></Node>
+<StgValue><ssdm name="norm_bias_read"/></StgValue>
+</operation>
+
+<operation id="10" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="9" bw="5" op_0_bw="64">
+<![CDATA[
+entry:3 %trunc_ln19 = trunc i64 %norm_bias_read
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln19"/></StgValue>
+</operation>
+
+<operation id="11" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="10" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="256" op_3_bw="5" op_4_bw="128">
+<![CDATA[
+entry:4 %call_ln11 = call void @load_norms_Pipeline__ln16_for_block_dim_out, i64 %norm_bias_read, i256 %weights, i5 %trunc_ln19, i128 %norm1_bias
+
+]]></Node>
+<StgValue><ssdm name="call_ln11"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="12" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="10" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="256" op_3_bw="5" op_4_bw="128">
+<![CDATA[
+entry:4 %call_ln11 = call void @load_norms_Pipeline__ln16_for_block_dim_out, i64 %norm_bias_read, i256 %weights, i5 %trunc_ln19, i128 %norm1_bias
+
+]]></Node>
+<StgValue><ssdm name="call_ln11"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="13" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="8" bw="64" op_0_bw="64" op_1_bw="64">
+<![CDATA[
+entry:2 %norm_weights_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %norm_weights
+
+]]></Node>
+<StgValue><ssdm name="norm_weights_read"/></StgValue>
+</operation>
+
+<operation id="14" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="11" bw="5" op_0_bw="64">
+<![CDATA[
+entry:5 %trunc_ln31 = trunc i64 %norm_weights_read
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln31"/></StgValue>
+</operation>
+
+<operation id="15" st_id="3" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="12" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="256" op_3_bw="5" op_4_bw="128" op_5_bw="0" op_6_bw="0">
+<![CDATA[
+entry:6 %call_ln11 = call void @load_norms_Pipeline__ln28_for_block_dim_out, i64 %norm_weights_read, i256 %weights, i5 %trunc_ln31, i128 %norm1_weights
+
+]]></Node>
+<StgValue><ssdm name="call_ln11"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="16" st_id="4" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="12" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="256" op_3_bw="5" op_4_bw="128" op_5_bw="0" op_6_bw="0">
+<![CDATA[
+entry:6 %call_ln11 = call void @load_norms_Pipeline__ln28_for_block_dim_out, i64 %norm_weights_read, i256 %weights, i5 %trunc_ln31, i128 %norm1_weights
+
+]]></Node>
+<StgValue><ssdm name="call_ln11"/></StgValue>
+</operation>
+</state>
+
+<state id="5" st_id="5">
+
+<operation id="17" st_id="5" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="13" bw="64" op_0_bw="64" op_1_bw="64">
+<![CDATA[
+entry:7 %empty = add i64 %norm_bias_read, i64 384
+
+]]></Node>
+<StgValue><ssdm name="empty"/></StgValue>
+</operation>
+
+<operation id="18" st_id="5" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="14" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="256" op_3_bw="5" op_4_bw="128" op_5_bw="0" op_6_bw="0" op_7_bw="0">
+<![CDATA[
+entry:8 %call_ln11 = call void @load_norms_Pipeline__ln40_for_block_dim_out, i64 %empty, i256 %weights, i5 %trunc_ln19, i128 %norm1_bias
+
+]]></Node>
+<StgValue><ssdm name="call_ln11"/></StgValue>
+</operation>
+</state>
+
+<state id="6" st_id="6">
+
+<operation id="19" st_id="6" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="14" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="256" op_3_bw="5" op_4_bw="128" op_5_bw="0" op_6_bw="0" op_7_bw="0">
+<![CDATA[
+entry:8 %call_ln11 = call void @load_norms_Pipeline__ln40_for_block_dim_out, i64 %empty, i256 %weights, i5 %trunc_ln19, i128 %norm1_bias
+
+]]></Node>
+<StgValue><ssdm name="call_ln11"/></StgValue>
+</operation>
+</state>
+
+<state id="7" st_id="7">
+
+<operation id="20" st_id="7" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="15" bw="64" op_0_bw="64" op_1_bw="64">
+<![CDATA[
+entry:9 %empty_202 = add i64 %norm_weights_read, i64 384
+
+]]></Node>
+<StgValue><ssdm name="empty_202"/></StgValue>
+</operation>
+
+<operation id="21" st_id="7" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="16" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="256" op_3_bw="5" op_4_bw="128" op_5_bw="0" op_6_bw="0" op_7_bw="0">
+<![CDATA[
+entry:10 %call_ln11 = call void @load_norms_Pipeline__ln52_for_block_dim_out, i64 %empty_202, i256 %weights, i5 %trunc_ln31, i128 %norm1_weights
+
+]]></Node>
+<StgValue><ssdm name="call_ln11"/></StgValue>
+</operation>
+</state>
+
+<state id="8" st_id="8">
+
+<operation id="22" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="6" bw="0" op_0_bw="0" op_1_bw="256" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
+<![CDATA[
+entry:0 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %weights, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_11, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="23" st_id="8" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="16" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="256" op_3_bw="5" op_4_bw="128" op_5_bw="0" op_6_bw="0" op_7_bw="0">
+<![CDATA[
+entry:10 %call_ln11 = call void @load_norms_Pipeline__ln52_for_block_dim_out, i64 %empty_202, i256 %weights, i5 %trunc_ln31, i128 %norm1_weights
+
+]]></Node>
+<StgValue><ssdm name="call_ln11"/></StgValue>
+</operation>
+
+<operation id="24" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="17" bw="0">
+<![CDATA[
+entry:11 %ret_ln62 = ret
+
+]]></Node>
+<StgValue><ssdm name="ret_ln62"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>

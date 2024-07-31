@@ -1,0 +1,153 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'compute_linear_on_stream'" level="0">
+<item name = "Date">Wed Jul 31 17:04:31 2024
+</item>
+<item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
+<item name = "Project">Deit_cpp</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xck26-sfvc784-2LV-c</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 6.344 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_compute_linear_on_stream_Pipeline_ln290_for_each_i_fu_90">compute_linear_on_stream_Pipeline_ln290_for_each_i, ?, ?, ?, ?, ?, ?, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 99, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">32, 544, 28632, 29485, 0</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 56, -</column>
+<column name="Register">-, -, 59, -, -</column>
+<specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
+<specialColumn name="Utilization (%)">11, 43, 12, 25, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_compute_linear_on_stream_Pipeline_ln290_for_each_i_fu_90">compute_linear_on_stream_Pipeline_ln290_for_each_i, 32, 544, 28632, 29455, 0</column>
+<column name="mul_7ns_7ns_14_1_1_U796">mul_7ns_7ns_14_1_1, 0, 0, 0, 30, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln70_1_fu_132_p2">+, 0, 0, 18, 11, 4</column>
+<column name="add_ln70_fu_116_p2">+, 0, 0, 18, 11, 4</column>
+<column name="iters_fu_189_p2">+, 0, 0, 27, 20, 20</column>
+<column name="last_in_dim_iter_fu_154_p2">+, 0, 0, 14, 7, 2</column>
+<column name="last_total_dim_iter_fu_174_p2">+, 0, 0, 20, 13, 2</column>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">20, 4, 1, 4</column>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="in_stream_read">9, 2, 1, 2</column>
+<column name="out_dim_offset_c_blk_n">9, 2, 1, 2</column>
+<column name="out_stream_write">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">3, 0, 3, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="grp_compute_linear_on_stream_Pipeline_ln290_for_each_i_fu_90_ap_start_reg">1, 0, 1, 0</column>
+<column name="in_dim_iters_i_reg_206">7, 0, 7, 0</column>
+<column name="iters_reg_222">20, 0, 20, 0</column>
+<column name="last_in_dim_iter_reg_212">7, 0, 7, 0</column>
+<column name="last_total_dim_iter_reg_217">13, 0, 13, 0</column>
+<column name="out_dim_iters_i_reg_201">7, 0, 7, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, compute_linear_on_stream, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, compute_linear_on_stream, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, compute_linear_on_stream, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, compute_linear_on_stream, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, compute_linear_on_stream, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, compute_linear_on_stream, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, compute_linear_on_stream, return value</column>
+<column name="out_stream_din">out, 512, ap_fifo, out_stream, pointer</column>
+<column name="out_stream_num_data_valid">in, 2, ap_fifo, out_stream, pointer</column>
+<column name="out_stream_fifo_cap">in, 2, ap_fifo, out_stream, pointer</column>
+<column name="out_stream_full_n">in, 1, ap_fifo, out_stream, pointer</column>
+<column name="out_stream_write">out, 1, ap_fifo, out_stream, pointer</column>
+<column name="in_stream_dout">in, 512, ap_fifo, in_stream, pointer</column>
+<column name="in_stream_num_data_valid">in, 7, ap_fifo, in_stream, pointer</column>
+<column name="in_stream_fifo_cap">in, 7, ap_fifo, in_stream, pointer</column>
+<column name="in_stream_empty_n">in, 1, ap_fifo, in_stream, pointer</column>
+<column name="in_stream_read">out, 1, ap_fifo, in_stream, pointer</column>
+<column name="weights_address0">out, 10, ap_memory, weights, array</column>
+<column name="weights_ce0">out, 1, ap_memory, weights, array</column>
+<column name="weights_q0">in, 4096, ap_memory, weights, array</column>
+<column name="bias_address0">out, 6, ap_memory, bias, array</column>
+<column name="bias_ce0">out, 1, ap_memory, bias, array</column>
+<column name="bias_q0">in, 288, ap_memory, bias, array</column>
+<column name="out_dim_offset">in, 10, ap_none, out_dim_offset, scalar</column>
+<column name="in_dim_offset">in, 10, ap_none, in_dim_offset, scalar</column>
+<column name="use_gelu_offset">in, 1, ap_none, use_gelu_offset, scalar</column>
+<column name="out_dim_offset_c_din">out, 10, ap_fifo, out_dim_offset_c, pointer</column>
+<column name="out_dim_offset_c_num_data_valid">in, 2, ap_fifo, out_dim_offset_c, pointer</column>
+<column name="out_dim_offset_c_fifo_cap">in, 2, ap_fifo, out_dim_offset_c, pointer</column>
+<column name="out_dim_offset_c_full_n">in, 1, ap_fifo, out_dim_offset_c, pointer</column>
+<column name="out_dim_offset_c_write">out, 1, ap_fifo, out_dim_offset_c, pointer</column>
+</table>
+</item>
+</section>
+</profile>

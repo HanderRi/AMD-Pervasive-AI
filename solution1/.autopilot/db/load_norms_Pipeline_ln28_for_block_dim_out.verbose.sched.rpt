@@ -1,0 +1,433 @@
+
+
+================================================================
+== Vitis HLS Report for 'load_norms_Pipeline_ln28_for_block_dim_out'
+================================================================
+* Date:           Wed Jul 31 16:59:00 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        Deit_cpp
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      202|      202|  2.020 us|  2.020 us|  202|  202|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                           |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |         Loop Name         |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- _ln28_for_block_dim_out  |      200|      200|        17|          8|          1|    24|       yes|
+        +---------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 8, depth = 17
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 17
+* Pipeline : 1
+  Pipeline-0 : II = 8, D = 17, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.21>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%dim_out = alloca i32 1"   --->   Operation 20 'alloca' 'dim_out' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%dim_out_block_1 = alloca i32 1"   --->   Operation 21 'alloca' 'dim_out_block_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %weights, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_11, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%trunc_ln31_2_read = read i5 @_ssdm_op_Read.ap_auto.i5, i5 %trunc_ln31_2"   --->   Operation 23 'read' 'trunc_ln31_2_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%norm_weights_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %norm_weights"   --->   Operation 24 'read' 'norm_weights_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.42ns)   --->   "%store_ln0 = store i5 0, i5 %dim_out_block_1"   --->   Operation 25 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 26 [1/1] (0.42ns)   --->   "%store_ln0 = store i8 0, i8 %dim_out"   --->   Operation 26 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc35"   --->   Operation 27 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%dim_out_block = load i5 %dim_out_block_1" [Deit_cpp/src/layernorm.cpp:28]   --->   Operation 28 'load' 'dim_out_block' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.75ns)   --->   "%icmp_ln28 = icmp_eq  i5 %dim_out_block, i5 24" [Deit_cpp/src/layernorm.cpp:28]   --->   Operation 29 'icmp' 'icmp_ln28' <Predicate = true> <Delay = 0.75> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.75> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 24, i64 24, i64 24"   --->   Operation 30 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.78ns)   --->   "%add_ln28_1 = add i5 %dim_out_block, i5 1" [Deit_cpp/src/layernorm.cpp:28]   --->   Operation 31 'add' 'add_ln28_1' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%br_ln28 = br i1 %icmp_ln28, void %for.inc35.split, void %for.end42.exitStub" [Deit_cpp/src/layernorm.cpp:28]   --->   Operation 32 'br' 'br_ln28' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%dim_out_load = load i8 %dim_out" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 33 'load' 'dim_out_load' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%shl_ln6 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i8.i1, i8 %dim_out_load, i1 0" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 34 'bitconcatenate' 'shl_ln6' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%zext_ln31 = zext i9 %shl_ln6" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 35 'zext' 'zext_ln31' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%trunc_ln31 = trunc i8 %dim_out_load" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 36 'trunc' 'trunc_ln31' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (1.08ns)   --->   "%add_ln31 = add i64 %zext_ln31, i64 %norm_weights_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 37 'add' 'add_ln31' <Predicate = (!icmp_ln28)> <Delay = 1.08> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.08> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%trunc_ln31_6 = partselect i59 @_ssdm_op_PartSelect.i59.i64.i32.i32, i64 %add_ln31, i32 5, i32 63" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 38 'partselect' 'trunc_ln31_6' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%lshr_ln2 = partselect i5 @_ssdm_op_PartSelect.i5.i8.i32.i32, i8 %dim_out_load, i32 3, i32 7" [Deit_cpp/src/layernorm.cpp:34]   --->   Operation 39 'partselect' 'lshr_ln2' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.76ns)   --->   "%add_ln28 = add i8 %dim_out_load, i8 8" [Deit_cpp/src/layernorm.cpp:28]   --->   Operation 40 'add' 'add_ln28' <Predicate = (!icmp_ln28)> <Delay = 0.76> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.76> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 41 [1/1] (0.42ns)   --->   "%store_ln28 = store i5 %add_ln28_1, i5 %dim_out_block_1" [Deit_cpp/src/layernorm.cpp:28]   --->   Operation 41 'store' 'store_ln28' <Predicate = (!icmp_ln28)> <Delay = 0.42>
+ST_1 : Operation 42 [1/1] (0.42ns)   --->   "%store_ln28 = store i8 %add_ln28, i8 %dim_out" [Deit_cpp/src/layernorm.cpp:28]   --->   Operation 42 'store' 'store_ln28' <Predicate = (!icmp_ln28)> <Delay = 0.42>
+
+State 2 <SV = 1> <Delay = 7.30>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%sext_ln31 = sext i59 %trunc_ln31_6" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 43 'sext' 'sext_ln31' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%weights_addr = getelementptr i256 %weights, i64 %sext_ln31" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 44 'getelementptr' 'weights_addr' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_2 : Operation 45 [7/7] (7.30ns)   --->   "%weights_load_31_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 45 'readreq' 'weights_load_31_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 46 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_1)   --->   "%or_ln31 = or i9 %shl_ln6, i9 2" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 46 'or' 'or_ln31' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_1)   --->   "%zext_ln31_2 = zext i9 %or_ln31" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 47 'zext' 'zext_ln31_2' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (1.08ns) (out node of the LUT)   --->   "%add_ln31_1 = add i64 %zext_ln31_2, i64 %norm_weights_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 48 'add' 'add_ln31_1' <Predicate = (!icmp_ln28)> <Delay = 1.08> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.08> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%trunc_ln9 = partselect i59 @_ssdm_op_PartSelect.i59.i64.i32.i32, i64 %add_ln31_1, i32 5, i32 63" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 49 'partselect' 'trunc_ln9' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 7.30>
+ST_3 : Operation 50 [6/7] (7.30ns)   --->   "%weights_load_31_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 50 'readreq' 'weights_load_31_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%sext_ln31_1 = sext i59 %trunc_ln9" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 51 'sext' 'sext_ln31_1' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%weights_addr_30 = getelementptr i256 %weights, i64 %sext_ln31_1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 52 'getelementptr' 'weights_addr_30' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_3 : Operation 53 [7/7] (7.30ns)   --->   "%weights_load_32_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_30, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 53 'readreq' 'weights_load_32_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 54 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_2)   --->   "%or_ln31_1 = or i9 %shl_ln6, i9 4" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 54 'or' 'or_ln31_1' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_2)   --->   "%zext_ln31_4 = zext i9 %or_ln31_1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 55 'zext' 'zext_ln31_4' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_3 : Operation 56 [1/1] (1.08ns) (out node of the LUT)   --->   "%add_ln31_2 = add i64 %zext_ln31_4, i64 %norm_weights_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 56 'add' 'add_ln31_2' <Predicate = (!icmp_ln28)> <Delay = 1.08> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.08> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%trunc_ln31_8 = partselect i59 @_ssdm_op_PartSelect.i59.i64.i32.i32, i64 %add_ln31_2, i32 5, i32 63" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 57 'partselect' 'trunc_ln31_8' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 7.30>
+ST_4 : Operation 58 [5/7] (7.30ns)   --->   "%weights_load_31_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 58 'readreq' 'weights_load_31_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 59 [6/7] (7.30ns)   --->   "%weights_load_32_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_30, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 59 'readreq' 'weights_load_32_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%sext_ln31_2 = sext i59 %trunc_ln31_8" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 60 'sext' 'sext_ln31_2' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%weights_addr_31 = getelementptr i256 %weights, i64 %sext_ln31_2" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 61 'getelementptr' 'weights_addr_31' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_4 : Operation 62 [7/7] (7.30ns)   --->   "%weights_load_33_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_31, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 62 'readreq' 'weights_load_33_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 63 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_3)   --->   "%or_ln31_2 = or i9 %shl_ln6, i9 6" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 63 'or' 'or_ln31_2' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_4 : Operation 64 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_3)   --->   "%zext_ln31_6 = zext i9 %or_ln31_2" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 64 'zext' 'zext_ln31_6' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_4 : Operation 65 [1/1] (1.08ns) (out node of the LUT)   --->   "%add_ln31_3 = add i64 %zext_ln31_6, i64 %norm_weights_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 65 'add' 'add_ln31_3' <Predicate = (!icmp_ln28)> <Delay = 1.08> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.08> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 66 [1/1] (0.00ns)   --->   "%trunc_ln31_s = partselect i59 @_ssdm_op_PartSelect.i59.i64.i32.i32, i64 %add_ln31_3, i32 5, i32 63" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 66 'partselect' 'trunc_ln31_s' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 7.30>
+ST_5 : Operation 67 [4/7] (7.30ns)   --->   "%weights_load_31_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 67 'readreq' 'weights_load_31_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 68 [5/7] (7.30ns)   --->   "%weights_load_32_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_30, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 68 'readreq' 'weights_load_32_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 69 [6/7] (7.30ns)   --->   "%weights_load_33_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_31, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 69 'readreq' 'weights_load_33_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 70 [1/1] (0.00ns)   --->   "%sext_ln31_3 = sext i59 %trunc_ln31_s" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 70 'sext' 'sext_ln31_3' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_5 : Operation 71 [1/1] (0.00ns)   --->   "%weights_addr_32 = getelementptr i256 %weights, i64 %sext_ln31_3" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 71 'getelementptr' 'weights_addr_32' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_5 : Operation 72 [7/7] (7.30ns)   --->   "%weights_load_34_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_32, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 72 'readreq' 'weights_load_34_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 73 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_4)   --->   "%or_ln31_3 = or i9 %shl_ln6, i9 8" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 73 'or' 'or_ln31_3' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_5 : Operation 74 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_4)   --->   "%zext_ln31_8 = zext i9 %or_ln31_3" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 74 'zext' 'zext_ln31_8' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_5 : Operation 75 [1/1] (1.08ns) (out node of the LUT)   --->   "%add_ln31_4 = add i64 %zext_ln31_8, i64 %norm_weights_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 75 'add' 'add_ln31_4' <Predicate = (!icmp_ln28)> <Delay = 1.08> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.08> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 76 [1/1] (0.00ns)   --->   "%trunc_ln31_9 = partselect i59 @_ssdm_op_PartSelect.i59.i64.i32.i32, i64 %add_ln31_4, i32 5, i32 63" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 76 'partselect' 'trunc_ln31_9' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 7.30>
+ST_6 : Operation 77 [3/7] (7.30ns)   --->   "%weights_load_31_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 77 'readreq' 'weights_load_31_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 78 [4/7] (7.30ns)   --->   "%weights_load_32_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_30, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 78 'readreq' 'weights_load_32_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 79 [5/7] (7.30ns)   --->   "%weights_load_33_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_31, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 79 'readreq' 'weights_load_33_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 80 [6/7] (7.30ns)   --->   "%weights_load_34_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_32, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 80 'readreq' 'weights_load_34_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 81 [1/1] (0.00ns)   --->   "%sext_ln31_4 = sext i59 %trunc_ln31_9" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 81 'sext' 'sext_ln31_4' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_6 : Operation 82 [1/1] (0.00ns)   --->   "%weights_addr_33 = getelementptr i256 %weights, i64 %sext_ln31_4" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 82 'getelementptr' 'weights_addr_33' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_6 : Operation 83 [7/7] (7.30ns)   --->   "%weights_load_35_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_33, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 83 'readreq' 'weights_load_35_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 84 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_5)   --->   "%or_ln31_4 = or i9 %shl_ln6, i9 10" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 84 'or' 'or_ln31_4' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_6 : Operation 85 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_5)   --->   "%zext_ln31_10 = zext i9 %or_ln31_4" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 85 'zext' 'zext_ln31_10' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_6 : Operation 86 [1/1] (1.08ns) (out node of the LUT)   --->   "%add_ln31_5 = add i64 %zext_ln31_10, i64 %norm_weights_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 86 'add' 'add_ln31_5' <Predicate = (!icmp_ln28)> <Delay = 1.08> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.08> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 87 [1/1] (0.00ns)   --->   "%trunc_ln31_11 = partselect i59 @_ssdm_op_PartSelect.i59.i64.i32.i32, i64 %add_ln31_5, i32 5, i32 63" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 87 'partselect' 'trunc_ln31_11' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 7.30>
+ST_7 : Operation 88 [2/7] (7.30ns)   --->   "%weights_load_31_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 88 'readreq' 'weights_load_31_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 89 [3/7] (7.30ns)   --->   "%weights_load_32_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_30, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 89 'readreq' 'weights_load_32_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 90 [4/7] (7.30ns)   --->   "%weights_load_33_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_31, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 90 'readreq' 'weights_load_33_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 91 [5/7] (7.30ns)   --->   "%weights_load_34_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_32, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 91 'readreq' 'weights_load_34_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 92 [6/7] (7.30ns)   --->   "%weights_load_35_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_33, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 92 'readreq' 'weights_load_35_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 93 [1/1] (0.00ns)   --->   "%sext_ln31_5 = sext i59 %trunc_ln31_11" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 93 'sext' 'sext_ln31_5' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_7 : Operation 94 [1/1] (0.00ns)   --->   "%weights_addr_34 = getelementptr i256 %weights, i64 %sext_ln31_5" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 94 'getelementptr' 'weights_addr_34' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_7 : Operation 95 [7/7] (7.30ns)   --->   "%weights_load_36_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_34, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 95 'readreq' 'weights_load_36_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 96 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_6)   --->   "%or_ln31_5 = or i9 %shl_ln6, i9 12" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 96 'or' 'or_ln31_5' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_7 : Operation 97 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_6)   --->   "%zext_ln31_12 = zext i9 %or_ln31_5" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 97 'zext' 'zext_ln31_12' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_7 : Operation 98 [1/1] (1.08ns) (out node of the LUT)   --->   "%add_ln31_6 = add i64 %zext_ln31_12, i64 %norm_weights_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 98 'add' 'add_ln31_6' <Predicate = (!icmp_ln28)> <Delay = 1.08> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.08> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 99 [1/1] (0.00ns)   --->   "%trunc_ln31_13 = partselect i59 @_ssdm_op_PartSelect.i59.i64.i32.i32, i64 %add_ln31_6, i32 5, i32 63" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 99 'partselect' 'trunc_ln31_13' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+
+State 8 <SV = 7> <Delay = 7.30>
+ST_8 : Operation 100 [1/7] (7.30ns)   --->   "%weights_load_31_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 100 'readreq' 'weights_load_31_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 101 [2/7] (7.30ns)   --->   "%weights_load_32_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_30, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 101 'readreq' 'weights_load_32_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 102 [3/7] (7.30ns)   --->   "%weights_load_33_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_31, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 102 'readreq' 'weights_load_33_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 103 [4/7] (7.30ns)   --->   "%weights_load_34_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_32, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 103 'readreq' 'weights_load_34_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 104 [5/7] (7.30ns)   --->   "%weights_load_35_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_33, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 104 'readreq' 'weights_load_35_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 105 [6/7] (7.30ns)   --->   "%weights_load_36_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_34, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 105 'readreq' 'weights_load_36_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 106 [1/1] (0.00ns)   --->   "%sext_ln31_6 = sext i59 %trunc_ln31_13" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 106 'sext' 'sext_ln31_6' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_8 : Operation 107 [1/1] (0.00ns)   --->   "%weights_addr_35 = getelementptr i256 %weights, i64 %sext_ln31_6" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 107 'getelementptr' 'weights_addr_35' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_8 : Operation 108 [7/7] (7.30ns)   --->   "%weights_load_37_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_35, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 108 'readreq' 'weights_load_37_req' <Predicate = (!icmp_ln28)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 109 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_7)   --->   "%or_ln31_6 = or i9 %shl_ln6, i9 14" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 109 'or' 'or_ln31_6' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_8 : Operation 110 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_7)   --->   "%zext_ln31_14 = zext i9 %or_ln31_6" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 110 'zext' 'zext_ln31_14' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_8 : Operation 111 [1/1] (1.08ns) (out node of the LUT)   --->   "%add_ln31_7 = add i64 %zext_ln31_14, i64 %norm_weights_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 111 'add' 'add_ln31_7' <Predicate = (!icmp_ln28)> <Delay = 1.08> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.08> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 112 [1/1] (0.00ns)   --->   "%trunc_ln31_15 = partselect i59 @_ssdm_op_PartSelect.i59.i64.i32.i32, i64 %add_ln31_7, i32 5, i32 63" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 112 'partselect' 'trunc_ln31_15' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+
+State 9 <SV = 8> <Delay = 7.30>
+ST_9 : Operation 113 [1/1] (7.30ns)   --->   "%weights_addr_read = read i256 @_ssdm_op_Read.m_axi.i256P1A, i256 %weights_addr" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 113 'read' 'weights_addr_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 114 [1/7] (7.30ns)   --->   "%weights_load_32_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_30, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 114 'readreq' 'weights_load_32_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 115 [2/7] (7.30ns)   --->   "%weights_load_33_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_31, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 115 'readreq' 'weights_load_33_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 116 [3/7] (7.30ns)   --->   "%weights_load_34_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_32, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 116 'readreq' 'weights_load_34_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 117 [4/7] (7.30ns)   --->   "%weights_load_35_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_33, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 117 'readreq' 'weights_load_35_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 118 [5/7] (7.30ns)   --->   "%weights_load_36_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_34, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 118 'readreq' 'weights_load_36_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 119 [6/7] (7.30ns)   --->   "%weights_load_37_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_35, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 119 'readreq' 'weights_load_37_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 120 [1/1] (0.00ns)   --->   "%sext_ln31_7 = sext i59 %trunc_ln31_15" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 120 'sext' 'sext_ln31_7' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 121 [1/1] (0.00ns)   --->   "%weights_addr_36 = getelementptr i256 %weights, i64 %sext_ln31_7" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 121 'getelementptr' 'weights_addr_36' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 122 [7/7] (7.30ns)   --->   "%weights_load_38_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_36, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 122 'readreq' 'weights_load_38_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 206 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 206 'ret' 'ret_ln0' <Predicate = (icmp_ln28)> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 7.30>
+ST_10 : Operation 123 [1/1] (0.00ns)   --->   "%trunc_ln31_4 = bitconcatenate i5 @_ssdm_op_BitConcatenate.i5.i4.i1, i4 %trunc_ln31, i1 0" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 123 'bitconcatenate' 'trunc_ln31_4' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 124 [1/1] (0.78ns)   --->   "%add_ln31_8 = add i5 %trunc_ln31_4, i5 %trunc_ln31_2_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 124 'add' 'add_ln31_8' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 125 [1/1] (0.00ns)   --->   "%shl_ln31_1 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln31_8, i3 0" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 125 'bitconcatenate' 'shl_ln31_1' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 126 [1/1] (0.00ns)   --->   "%zext_ln31_1 = zext i8 %shl_ln31_1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 126 'zext' 'zext_ln31_1' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 127 [1/1] (1.53ns)   --->   "%lshr_ln31 = lshr i256 %weights_addr_read, i256 %zext_ln31_1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 127 'lshr' 'lshr_ln31' <Predicate = true> <Delay = 1.53> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 128 [1/1] (0.00ns)   --->   "%trunc_ln31_1 = trunc i256 %lshr_ln31" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 128 'trunc' 'trunc_ln31_1' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 129 [1/1] (7.30ns)   --->   "%weights_addr_30_read = read i256 @_ssdm_op_Read.m_axi.i256P1A, i256 %weights_addr_30" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 129 'read' 'weights_addr_30_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 130 [1/7] (7.30ns)   --->   "%weights_load_33_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_31, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 130 'readreq' 'weights_load_33_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 131 [2/7] (7.30ns)   --->   "%weights_load_34_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_32, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 131 'readreq' 'weights_load_34_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 132 [3/7] (7.30ns)   --->   "%weights_load_35_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_33, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 132 'readreq' 'weights_load_35_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 133 [4/7] (7.30ns)   --->   "%weights_load_36_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_34, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 133 'readreq' 'weights_load_36_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 134 [5/7] (7.30ns)   --->   "%weights_load_37_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_35, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 134 'readreq' 'weights_load_37_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 135 [6/7] (7.30ns)   --->   "%weights_load_38_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_36, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 135 'readreq' 'weights_load_38_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 7.30>
+ST_11 : Operation 136 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_9)   --->   "%or_ln31_7 = or i5 %trunc_ln31_4, i5 2" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 136 'or' 'or_ln31_7' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 137 [1/1] (0.78ns) (out node of the LUT)   --->   "%add_ln31_9 = add i5 %or_ln31_7, i5 %trunc_ln31_2_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 137 'add' 'add_ln31_9' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 138 [1/1] (0.00ns)   --->   "%shl_ln31_2 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln31_9, i3 0" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 138 'bitconcatenate' 'shl_ln31_2' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 139 [1/1] (0.00ns)   --->   "%zext_ln31_3 = zext i8 %shl_ln31_2" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 139 'zext' 'zext_ln31_3' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 140 [1/1] (1.53ns)   --->   "%lshr_ln31_1 = lshr i256 %weights_addr_30_read, i256 %zext_ln31_3" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 140 'lshr' 'lshr_ln31_1' <Predicate = true> <Delay = 1.53> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 141 [1/1] (0.00ns)   --->   "%trunc_ln31_3 = trunc i256 %lshr_ln31_1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 141 'trunc' 'trunc_ln31_3' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 142 [1/1] (7.30ns)   --->   "%weights_addr_31_read = read i256 @_ssdm_op_Read.m_axi.i256P1A, i256 %weights_addr_31" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 142 'read' 'weights_addr_31_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 143 [1/7] (7.30ns)   --->   "%weights_load_34_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_32, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 143 'readreq' 'weights_load_34_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 144 [2/7] (7.30ns)   --->   "%weights_load_35_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_33, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 144 'readreq' 'weights_load_35_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 145 [3/7] (7.30ns)   --->   "%weights_load_36_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_34, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 145 'readreq' 'weights_load_36_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 146 [4/7] (7.30ns)   --->   "%weights_load_37_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_35, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 146 'readreq' 'weights_load_37_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 147 [5/7] (7.30ns)   --->   "%weights_load_38_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_36, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 147 'readreq' 'weights_load_38_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 12 <SV = 11> <Delay = 7.30>
+ST_12 : Operation 148 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_10)   --->   "%or_ln31_8 = or i5 %trunc_ln31_4, i5 4" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 148 'or' 'or_ln31_8' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 149 [1/1] (0.78ns) (out node of the LUT)   --->   "%add_ln31_10 = add i5 %or_ln31_8, i5 %trunc_ln31_2_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 149 'add' 'add_ln31_10' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 150 [1/1] (0.00ns)   --->   "%shl_ln31_3 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln31_10, i3 0" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 150 'bitconcatenate' 'shl_ln31_3' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 151 [1/1] (0.00ns)   --->   "%zext_ln31_5 = zext i8 %shl_ln31_3" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 151 'zext' 'zext_ln31_5' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 152 [1/1] (1.53ns)   --->   "%lshr_ln31_2 = lshr i256 %weights_addr_31_read, i256 %zext_ln31_5" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 152 'lshr' 'lshr_ln31_2' <Predicate = true> <Delay = 1.53> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 153 [1/1] (0.00ns)   --->   "%trunc_ln31_5 = trunc i256 %lshr_ln31_2" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 153 'trunc' 'trunc_ln31_5' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 154 [1/1] (7.30ns)   --->   "%weights_addr_32_read = read i256 @_ssdm_op_Read.m_axi.i256P1A, i256 %weights_addr_32" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 154 'read' 'weights_addr_32_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 155 [1/7] (7.30ns)   --->   "%weights_load_35_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_33, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 155 'readreq' 'weights_load_35_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 156 [2/7] (7.30ns)   --->   "%weights_load_36_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_34, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 156 'readreq' 'weights_load_36_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 157 [3/7] (7.30ns)   --->   "%weights_load_37_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_35, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 157 'readreq' 'weights_load_37_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 158 [4/7] (7.30ns)   --->   "%weights_load_38_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_36, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 158 'readreq' 'weights_load_38_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 13 <SV = 12> <Delay = 7.30>
+ST_13 : Operation 159 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_11)   --->   "%or_ln31_9 = or i5 %trunc_ln31_4, i5 6" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 159 'or' 'or_ln31_9' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 160 [1/1] (0.78ns) (out node of the LUT)   --->   "%add_ln31_11 = add i5 %or_ln31_9, i5 %trunc_ln31_2_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 160 'add' 'add_ln31_11' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 161 [1/1] (0.00ns)   --->   "%shl_ln31_4 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln31_11, i3 0" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 161 'bitconcatenate' 'shl_ln31_4' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 162 [1/1] (0.00ns)   --->   "%zext_ln31_7 = zext i8 %shl_ln31_4" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 162 'zext' 'zext_ln31_7' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 163 [1/1] (1.53ns)   --->   "%lshr_ln31_3 = lshr i256 %weights_addr_32_read, i256 %zext_ln31_7" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 163 'lshr' 'lshr_ln31_3' <Predicate = true> <Delay = 1.53> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 164 [1/1] (0.00ns)   --->   "%trunc_ln31_7 = trunc i256 %lshr_ln31_3" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 164 'trunc' 'trunc_ln31_7' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 165 [1/1] (7.30ns)   --->   "%weights_addr_33_read = read i256 @_ssdm_op_Read.m_axi.i256P1A, i256 %weights_addr_33" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 165 'read' 'weights_addr_33_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 166 [1/7] (7.30ns)   --->   "%weights_load_36_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_34, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 166 'readreq' 'weights_load_36_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 167 [2/7] (7.30ns)   --->   "%weights_load_37_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_35, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 167 'readreq' 'weights_load_37_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 168 [3/7] (7.30ns)   --->   "%weights_load_38_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_36, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 168 'readreq' 'weights_load_38_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 14 <SV = 13> <Delay = 7.30>
+ST_14 : Operation 169 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_12)   --->   "%or_ln31_10 = or i5 %trunc_ln31_4, i5 8" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 169 'or' 'or_ln31_10' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 170 [1/1] (0.78ns) (out node of the LUT)   --->   "%add_ln31_12 = add i5 %or_ln31_10, i5 %trunc_ln31_2_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 170 'add' 'add_ln31_12' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 171 [1/1] (0.00ns)   --->   "%shl_ln31_5 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln31_12, i3 0" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 171 'bitconcatenate' 'shl_ln31_5' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 172 [1/1] (0.00ns)   --->   "%zext_ln31_9 = zext i8 %shl_ln31_5" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 172 'zext' 'zext_ln31_9' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 173 [1/1] (1.53ns)   --->   "%lshr_ln31_4 = lshr i256 %weights_addr_33_read, i256 %zext_ln31_9" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 173 'lshr' 'lshr_ln31_4' <Predicate = true> <Delay = 1.53> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 174 [1/1] (0.00ns)   --->   "%trunc_ln31_10 = trunc i256 %lshr_ln31_4" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 174 'trunc' 'trunc_ln31_10' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 175 [1/1] (7.30ns)   --->   "%weights_addr_34_read = read i256 @_ssdm_op_Read.m_axi.i256P1A, i256 %weights_addr_34" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 175 'read' 'weights_addr_34_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 176 [1/7] (7.30ns)   --->   "%weights_load_37_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_35, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 176 'readreq' 'weights_load_37_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 177 [2/7] (7.30ns)   --->   "%weights_load_38_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_36, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 177 'readreq' 'weights_load_38_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 15 <SV = 14> <Delay = 7.30>
+ST_15 : Operation 178 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_13)   --->   "%or_ln31_11 = or i5 %trunc_ln31_4, i5 10" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 178 'or' 'or_ln31_11' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 179 [1/1] (0.78ns) (out node of the LUT)   --->   "%add_ln31_13 = add i5 %or_ln31_11, i5 %trunc_ln31_2_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 179 'add' 'add_ln31_13' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 180 [1/1] (0.00ns)   --->   "%shl_ln31_6 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln31_13, i3 0" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 180 'bitconcatenate' 'shl_ln31_6' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 181 [1/1] (0.00ns)   --->   "%zext_ln31_11 = zext i8 %shl_ln31_6" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 181 'zext' 'zext_ln31_11' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 182 [1/1] (1.53ns)   --->   "%lshr_ln31_5 = lshr i256 %weights_addr_34_read, i256 %zext_ln31_11" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 182 'lshr' 'lshr_ln31_5' <Predicate = true> <Delay = 1.53> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 183 [1/1] (0.00ns)   --->   "%trunc_ln31_12 = trunc i256 %lshr_ln31_5" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 183 'trunc' 'trunc_ln31_12' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 184 [1/1] (7.30ns)   --->   "%weights_addr_35_read = read i256 @_ssdm_op_Read.m_axi.i256P1A, i256 %weights_addr_35" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 184 'read' 'weights_addr_35_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 185 [1/7] (7.30ns)   --->   "%weights_load_38_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i256 %weights_addr_36, i32 1" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 185 'readreq' 'weights_load_38_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 16 <SV = 15> <Delay = 7.30>
+ST_16 : Operation 186 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_14)   --->   "%or_ln31_12 = or i5 %trunc_ln31_4, i5 12" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 186 'or' 'or_ln31_12' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 187 [1/1] (0.78ns) (out node of the LUT)   --->   "%add_ln31_14 = add i5 %or_ln31_12, i5 %trunc_ln31_2_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 187 'add' 'add_ln31_14' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 188 [1/1] (0.00ns)   --->   "%shl_ln31_7 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln31_14, i3 0" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 188 'bitconcatenate' 'shl_ln31_7' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 189 [1/1] (0.00ns)   --->   "%zext_ln31_13 = zext i8 %shl_ln31_7" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 189 'zext' 'zext_ln31_13' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 190 [1/1] (1.53ns)   --->   "%lshr_ln31_6 = lshr i256 %weights_addr_35_read, i256 %zext_ln31_13" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 190 'lshr' 'lshr_ln31_6' <Predicate = true> <Delay = 1.53> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 191 [1/1] (0.00ns)   --->   "%trunc_ln31_14 = trunc i256 %lshr_ln31_6" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 191 'trunc' 'trunc_ln31_14' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 192 [1/1] (0.00ns) (grouped into LUT with out node add_ln31_15)   --->   "%or_ln31_13 = or i5 %trunc_ln31_4, i5 14" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 192 'or' 'or_ln31_13' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 193 [1/1] (7.30ns)   --->   "%weights_addr_36_read = read i256 @_ssdm_op_Read.m_axi.i256P1A, i256 %weights_addr_36" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 193 'read' 'weights_addr_36_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 194 [1/1] (0.78ns) (out node of the LUT)   --->   "%add_ln31_15 = add i5 %or_ln31_13, i5 %trunc_ln31_2_read" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 194 'add' 'add_ln31_15' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 2.77>
+ST_17 : Operation 195 [1/1] (0.00ns)   --->   "%specpipeline_ln30 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_24" [Deit_cpp/src/layernorm.cpp:30]   --->   Operation 195 'specpipeline' 'specpipeline_ln30' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 196 [1/1] (0.00ns)   --->   "%specloopname_ln28 = specloopname void @_ssdm_op_SpecLoopName, void @empty_27" [Deit_cpp/src/layernorm.cpp:28]   --->   Operation 196 'specloopname' 'specloopname_ln28' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 197 [1/1] (0.00ns)   --->   "%shl_ln31_8 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln31_15, i3 0" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 197 'bitconcatenate' 'shl_ln31_8' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 198 [1/1] (0.00ns)   --->   "%zext_ln31_15 = zext i8 %shl_ln31_8" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 198 'zext' 'zext_ln31_15' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 199 [1/1] (1.53ns)   --->   "%lshr_ln31_7 = lshr i256 %weights_addr_36_read, i256 %zext_ln31_15" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 199 'lshr' 'lshr_ln31_7' <Predicate = true> <Delay = 1.53> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 200 [1/1] (0.00ns)   --->   "%trunc_ln31_16 = trunc i256 %lshr_ln31_7" [Deit_cpp/src/layernorm.cpp:31]   --->   Operation 200 'trunc' 'trunc_ln31_16' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 201 [1/1] (0.00ns)   --->   "%zext_ln34 = zext i5 %lshr_ln2" [Deit_cpp/src/layernorm.cpp:34]   --->   Operation 201 'zext' 'zext_ln34' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 202 [1/1] (0.00ns)   --->   "%norm1_weights_addr = getelementptr i128 %norm1_weights, i64 0, i64 %zext_ln34" [Deit_cpp/src/layernorm.cpp:34]   --->   Operation 202 'getelementptr' 'norm1_weights_addr' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 203 [1/1] (0.00ns)   --->   "%tmp_s = bitconcatenate i128 @_ssdm_op_BitConcatenate.i128.i16.i16.i16.i16.i16.i16.i16.i16, i16 %trunc_ln31_16, i16 %trunc_ln31_14, i16 %trunc_ln31_12, i16 %trunc_ln31_10, i16 %trunc_ln31_7, i16 %trunc_ln31_5, i16 %trunc_ln31_3, i16 %trunc_ln31_1" [Deit_cpp/src/layernorm.cpp:34]   --->   Operation 203 'bitconcatenate' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 204 [1/1] (1.23ns)   --->   "%store_ln34 = store i128 %tmp_s, i5 %norm1_weights_addr" [Deit_cpp/src/layernorm.cpp:34]   --->   Operation 204 'store' 'store_ln34' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 24> <RAM>
+ST_17 : Operation 205 [1/1] (0.00ns)   --->   "%br_ln28 = br void %for.inc35" [Deit_cpp/src/layernorm.cpp:28]   --->   Operation 205 'br' 'br_ln28' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.22ns
+The critical path consists of the following:
+	'alloca' operation ('dim_out_block') [6]  (0 ns)
+	'load' operation ('dim_out_block', Deit_cpp/src/layernorm.cpp:28) on local variable 'dim_out_block' [14]  (0 ns)
+	'add' operation ('add_ln28_1', Deit_cpp/src/layernorm.cpp:28) [17]  (0.789 ns)
+	'store' operation ('store_ln28', Deit_cpp/src/layernorm.cpp:28) of variable 'add_ln28_1', Deit_cpp/src/layernorm.cpp:28 on local variable 'dim_out_block' [142]  (0.427 ns)
+
+ <State 2>: 7.3ns
+The critical path consists of the following:
+	'getelementptr' operation ('weights_addr', Deit_cpp/src/layernorm.cpp:31) [30]  (0 ns)
+	bus request operation ('weights_load_31_req', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [31]  (7.3 ns)
+
+ <State 3>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('weights_load_31_req', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [31]  (7.3 ns)
+
+ <State 4>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('weights_load_31_req', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [31]  (7.3 ns)
+
+ <State 5>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('weights_load_31_req', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [31]  (7.3 ns)
+
+ <State 6>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('weights_load_31_req', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [31]  (7.3 ns)
+
+ <State 7>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('weights_load_31_req', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [31]  (7.3 ns)
+
+ <State 8>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('weights_load_31_req', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [31]  (7.3 ns)
+
+ <State 9>: 7.3ns
+The critical path consists of the following:
+	bus read operation ('weights_addr_read', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [32]  (7.3 ns)
+
+ <State 10>: 7.3ns
+The critical path consists of the following:
+	bus read operation ('weights_addr_30_read', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [46]  (7.3 ns)
+
+ <State 11>: 7.3ns
+The critical path consists of the following:
+	bus read operation ('weights_addr_31_read', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [60]  (7.3 ns)
+
+ <State 12>: 7.3ns
+The critical path consists of the following:
+	bus read operation ('weights_addr_32_read', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [74]  (7.3 ns)
+
+ <State 13>: 7.3ns
+The critical path consists of the following:
+	bus read operation ('weights_addr_33_read', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [88]  (7.3 ns)
+
+ <State 14>: 7.3ns
+The critical path consists of the following:
+	bus read operation ('weights_addr_34_read', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [102]  (7.3 ns)
+
+ <State 15>: 7.3ns
+The critical path consists of the following:
+	bus read operation ('weights_addr_35_read', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [116]  (7.3 ns)
+
+ <State 16>: 7.3ns
+The critical path consists of the following:
+	bus read operation ('weights_addr_36_read', Deit_cpp/src/layernorm.cpp:31) on port 'weights' (Deit_cpp/src/layernorm.cpp:31) [130]  (7.3 ns)
+
+ <State 17>: 2.77ns
+The critical path consists of the following:
+	'lshr' operation ('lshr_ln31_7', Deit_cpp/src/layernorm.cpp:31) [134]  (1.53 ns)
+	'store' operation ('store_ln34', Deit_cpp/src/layernorm.cpp:34) of variable 'tmp_s', Deit_cpp/src/layernorm.cpp:34 on array 'norm1_weights' [140]  (1.24 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

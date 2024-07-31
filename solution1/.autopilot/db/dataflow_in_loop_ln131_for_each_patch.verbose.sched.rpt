@@ -1,0 +1,151 @@
+
+
+================================================================
+== Vitis HLS Report for 'dataflow_in_loop_ln131_for_each_patch'
+================================================================
+* Date:           Wed Jul 31 16:59:24 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        Deit_cpp
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |      122|      124|  1.220 us|  1.240 us|   24|   24|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 4, States = { 1 2 3 4 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.95>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%x_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %x"   --->   Operation 5 'read' 'x_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%patch_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %patch"   --->   Operation 6 'read' 'patch_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%x_patch_data_M_elems_V = alloca i64 1" [Deit_cpp/src/layernorm.cpp:134]   --->   Operation 7 'alloca' 'x_patch_data_M_elems_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%x_patch_data_M_elems_V_1 = alloca i64 1" [Deit_cpp/src/layernorm.cpp:134]   --->   Operation 8 'alloca' 'x_patch_data_M_elems_V_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%x_patch_data_M_elems_V_2 = alloca i64 1" [Deit_cpp/src/layernorm.cpp:134]   --->   Operation 9 'alloca' 'x_patch_data_M_elems_V_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%x_patch_data_M_elems_V_3 = alloca i64 1" [Deit_cpp/src/layernorm.cpp:134]   --->   Operation 10 'alloca' 'x_patch_data_M_elems_V_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%x_patch_data_M_elems_V_4 = alloca i64 1" [Deit_cpp/src/layernorm.cpp:134]   --->   Operation 11 'alloca' 'x_patch_data_M_elems_V_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%x_patch_data_M_elems_V_5 = alloca i64 1" [Deit_cpp/src/layernorm.cpp:134]   --->   Operation 12 'alloca' 'x_patch_data_M_elems_V_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%x_patch_data_M_elems_V_6 = alloca i64 1" [Deit_cpp/src/layernorm.cpp:134]   --->   Operation 13 'alloca' 'x_patch_data_M_elems_V_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%x_patch_data_M_elems_V_7 = alloca i64 1" [Deit_cpp/src/layernorm.cpp:134]   --->   Operation 14 'alloca' 'x_patch_data_M_elems_V_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [2/2] (1.95ns)   --->   "%call_ret = call i64 @layernorm_accumulate, i256 %inout2, i8 %patch_read, i64 %x_read, i32 %x_patch_data_M_elems_V, i32 %x_patch_data_M_elems_V_1, i32 %x_patch_data_M_elems_V_2, i32 %x_patch_data_M_elems_V_3, i32 %x_patch_data_M_elems_V_4, i32 %x_patch_data_M_elems_V_5, i32 %x_patch_data_M_elems_V_6, i32 %x_patch_data_M_elems_V_7" [Deit_cpp/src/layernorm.cpp:138]   --->   Operation 15 'call' 'call_ret' <Predicate = true> <Delay = 1.95> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 6.63>
+ST_2 : Operation 16 [1/2] (6.63ns)   --->   "%call_ret = call i64 @layernorm_accumulate, i256 %inout2, i8 %patch_read, i64 %x_read, i32 %x_patch_data_M_elems_V, i32 %x_patch_data_M_elems_V_1, i32 %x_patch_data_M_elems_V_2, i32 %x_patch_data_M_elems_V_3, i32 %x_patch_data_M_elems_V_4, i32 %x_patch_data_M_elems_V_5, i32 %x_patch_data_M_elems_V_6, i32 %x_patch_data_M_elems_V_7" [Deit_cpp/src/layernorm.cpp:138]   --->   Operation 16 'call' 'call_ret' <Predicate = true> <Delay = 6.63> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%mean_V = extractvalue i64 %call_ret" [Deit_cpp/src/layernorm.cpp:138]   --->   Operation 17 'extractvalue' 'mean_V' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%mean_sq_V = extractvalue i64 %call_ret" [Deit_cpp/src/layernorm.cpp:138]   --->   Operation 18 'extractvalue' 'mean_sq_V' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+
+State 3 <SV = 2> <Delay = 5.98>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%out_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %out_r"   --->   Operation 19 'read' 'out_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 20 [2/2] (5.98ns)   --->   "%call_ln139 = call void @layernorm_output, i256 %inout1, i8 %patch_read, i64 %out_read, i32 %x_patch_data_M_elems_V, i32 %x_patch_data_M_elems_V_1, i32 %x_patch_data_M_elems_V_2, i32 %x_patch_data_M_elems_V_3, i32 %x_patch_data_M_elems_V_4, i32 %x_patch_data_M_elems_V_5, i32 %x_patch_data_M_elems_V_6, i32 %x_patch_data_M_elems_V_7, i32 %mean_V, i32 %mean_sq_V, i128 %weights, i128 %bias, i3 %norm_eps_V" [Deit_cpp/src/layernorm.cpp:139]   --->   Operation 20 'call' 'call_ln139' <Predicate = true> <Delay = 5.98> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %inout1, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_14, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %inout2, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_8, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 23 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln133 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_24" [Deit_cpp/src/layernorm.cpp:133]   --->   Operation 23 'specdataflowpipeline' 'specdataflowpipeline_ln133' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 24 [1/2] (0.00ns)   --->   "%call_ln139 = call void @layernorm_output, i256 %inout1, i8 %patch_read, i64 %out_read, i32 %x_patch_data_M_elems_V, i32 %x_patch_data_M_elems_V_1, i32 %x_patch_data_M_elems_V_2, i32 %x_patch_data_M_elems_V_3, i32 %x_patch_data_M_elems_V_4, i32 %x_patch_data_M_elems_V_5, i32 %x_patch_data_M_elems_V_6, i32 %x_patch_data_M_elems_V_7, i32 %mean_V, i32 %mean_sq_V, i128 %weights, i128 %bias, i3 %norm_eps_V" [Deit_cpp/src/layernorm.cpp:139]   --->   Operation 24 'call' 'call_ln139' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 25 [1/1] (0.00ns)   --->   "%ret_ln139 = ret" [Deit_cpp/src/layernorm.cpp:139]   --->   Operation 25 'ret' 'ret_ln139' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.96ns
+The critical path consists of the following:
+	wire read operation ('x_read') on port 'x' [13]  (0 ns)
+	'call' operation ('call_ret', Deit_cpp/src/layernorm.cpp:138) to 'layernorm_accumulate' [23]  (1.96 ns)
+
+ <State 2>: 6.63ns
+The critical path consists of the following:
+	'call' operation ('call_ret', Deit_cpp/src/layernorm.cpp:138) to 'layernorm_accumulate' [23]  (6.63 ns)
+
+ <State 3>: 5.99ns
+The critical path consists of the following:
+	wire read operation ('out_read') on port 'out_r' [12]  (0 ns)
+	'call' operation ('call_ln139', Deit_cpp/src/layernorm.cpp:139) to 'layernorm_output' [26]  (5.99 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

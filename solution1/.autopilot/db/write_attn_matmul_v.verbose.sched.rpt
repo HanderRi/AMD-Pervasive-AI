@@ -1,0 +1,184 @@
+
+
+================================================================
+== Vitis HLS Report for 'write_attn_matmul_v'
+================================================================
+* Date:           Wed Jul 31 17:01:24 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        Deit_cpp
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     3107|     3107|  31.070 us|  31.070 us|  3107|  3107|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 9
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.86>
+ST_1 : Operation 10 [1/1] (1.86ns)   --->   "%attn_matmul_v_read = read i64 @_ssdm_op_Read.ap_fifo.i64P0A, i64 %attn_matmul_v"   --->   Operation 10 'read' 'attn_matmul_v_read' <Predicate = true> <Delay = 1.86> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.86> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 5> <FIFO>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i59 @_ssdm_op_PartSelect.i59.i64.i32.i32, i64 %attn_matmul_v_read, i32 5, i32 63" [Deit_cpp/src/attention.cpp:403]   --->   Operation 11 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 7.30>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%sext_ln403 = sext i59 %trunc_ln" [Deit_cpp/src/attention.cpp:403]   --->   Operation 12 'sext' 'sext_ln403' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%inout1_addr = getelementptr i256 %inout1, i64 %sext_ln403" [Deit_cpp/src/attention.cpp:403]   --->   Operation 13 'getelementptr' 'inout1_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (7.30ns)   --->   "%empty = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i256, i256 %inout1_addr, i32 3096" [Deit_cpp/src/attention.cpp:403]   --->   Operation 14 'writereq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%empty_179 = wait i32 @_ssdm_op_Wait"   --->   Operation 15 'wait' 'empty_179' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 16 [2/2] (0.00ns)   --->   "%call_ln403 = call void @write_attn_matmul_v_Pipeline__ln403_for_each_patch__ln405_for_block_dim, i256 %inout1, i59 %trunc_ln, i256 %attn_matmul_v_stream" [Deit_cpp/src/attention.cpp:403]   --->   Operation 16 'call' 'call_ln403' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 17 [1/2] (0.00ns)   --->   "%call_ln403 = call void @write_attn_matmul_v_Pipeline__ln403_for_each_patch__ln405_for_block_dim, i256 %inout1, i59 %trunc_ln, i256 %attn_matmul_v_stream" [Deit_cpp/src/attention.cpp:403]   --->   Operation 17 'call' 'call_ln403' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 7.30>
+ST_5 : Operation 18 [5/5] (7.30ns)   --->   "%empty_180 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i256, i256 %inout1_addr" [Deit_cpp/src/attention.cpp:412]   --->   Operation 18 'writeresp' 'empty_180' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 7.30>
+ST_6 : Operation 19 [4/5] (7.30ns)   --->   "%empty_180 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i256, i256 %inout1_addr" [Deit_cpp/src/attention.cpp:412]   --->   Operation 19 'writeresp' 'empty_180' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 7.30>
+ST_7 : Operation 20 [3/5] (7.30ns)   --->   "%empty_180 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i256, i256 %inout1_addr" [Deit_cpp/src/attention.cpp:412]   --->   Operation 20 'writeresp' 'empty_180' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 7.30>
+ST_8 : Operation 21 [2/5] (7.30ns)   --->   "%empty_180 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i256, i256 %inout1_addr" [Deit_cpp/src/attention.cpp:412]   --->   Operation 21 'writeresp' 'empty_180' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 7.30>
+ST_9 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %attn_matmul_v, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %attn_matmul_v_stream, void @empty_71, i32 0, i32 0, void @empty_24, i32 0, i32 0, void @empty_24, void @empty_24, void @empty_24, i32 0, i32 0, i32 0, i32 0, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 23 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %inout1, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_14, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 25 [1/5] (7.30ns)   --->   "%empty_180 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i256, i256 %inout1_addr" [Deit_cpp/src/attention.cpp:412]   --->   Operation 25 'writeresp' 'empty_180' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 26 [1/1] (0.00ns)   --->   "%ret_ln412 = ret" [Deit_cpp/src/attention.cpp:412]   --->   Operation 26 'ret' 'ret_ln412' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.86ns
+The critical path consists of the following:
+	fifo read operation ('attn_matmul_v_read') on port 'attn_matmul_v' [5]  (1.86 ns)
+
+ <State 2>: 7.3ns
+The critical path consists of the following:
+	'getelementptr' operation ('inout1_addr', Deit_cpp/src/attention.cpp:403) [10]  (0 ns)
+	bus request operation ('empty', Deit_cpp/src/attention.cpp:403) on port 'inout1' (Deit_cpp/src/attention.cpp:403) [11]  (7.3 ns)
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 7.3ns
+The critical path consists of the following:
+	bus response operation ('empty_180', Deit_cpp/src/attention.cpp:412) on port 'inout1' (Deit_cpp/src/attention.cpp:412) [14]  (7.3 ns)
+
+ <State 6>: 7.3ns
+The critical path consists of the following:
+	bus response operation ('empty_180', Deit_cpp/src/attention.cpp:412) on port 'inout1' (Deit_cpp/src/attention.cpp:412) [14]  (7.3 ns)
+
+ <State 7>: 7.3ns
+The critical path consists of the following:
+	bus response operation ('empty_180', Deit_cpp/src/attention.cpp:412) on port 'inout1' (Deit_cpp/src/attention.cpp:412) [14]  (7.3 ns)
+
+ <State 8>: 7.3ns
+The critical path consists of the following:
+	bus response operation ('empty_180', Deit_cpp/src/attention.cpp:412) on port 'inout1' (Deit_cpp/src/attention.cpp:412) [14]  (7.3 ns)
+
+ <State 9>: 7.3ns
+The critical path consists of the following:
+	bus response operation ('empty_180', Deit_cpp/src/attention.cpp:412) on port 'inout1' (Deit_cpp/src/attention.cpp:412) [14]  (7.3 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

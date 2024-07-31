@@ -1,0 +1,241 @@
+
+
+================================================================
+== Vitis HLS Report for 'load_one_time_weights'
+================================================================
+* Date:           Wed Jul 31 17:02:02 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        Deit_cpp
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   147671|   147671|  1.477 ms|  1.477 ms|  147671|  147671|       no|
+    +---------+---------+----------+----------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+---------+---------+----------+----------+--------+--------+---------+
+        |                                                                                         |                                                                               |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+        |                                         Instance                                        |                                     Module                                    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+        +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+---------+---------+----------+----------+--------+--------+---------+
+        |grp_load_one_time_weights_Pipeline_ln13_for_block_dim_out_fu_88                          |load_one_time_weights_Pipeline_ln13_for_block_dim_out                          |      202|      202|  2.020 us|  2.020 us|     202|     202|       no|
+        |grp_load_one_time_weights_Pipeline_ln29_for_each_channel_ln33_for_block_dim_out_l_fu_99  |load_one_time_weights_Pipeline_ln29_for_each_channel_ln33_for_block_dim_out_l  |   147466|   147466|  1.475 ms|  1.475 ms|  147466|  147466|       no|
+        +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+---------+---------+----------+----------+--------+--------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|     174|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        -|     -|    8291|   25915|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       -|     208|    -|
+|Register         |        -|     -|      91|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        0|     0|    8382|   26297|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |      288|  1248|  234240|  117120|   64|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        0|     0|       3|      22|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+---------+----+------+-------+-----+
+    |                                         Instance                                        |                                     Module                                    | BRAM_18K| DSP|  FF  |  LUT  | URAM|
+    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+---------+----+------+-------+-----+
+    |grp_load_one_time_weights_Pipeline_ln13_for_block_dim_out_fu_88                          |load_one_time_weights_Pipeline_ln13_for_block_dim_out                          |        0|   0|  2694|   8615|    0|
+    |grp_load_one_time_weights_Pipeline_ln29_for_each_channel_ln33_for_block_dim_out_l_fu_99  |load_one_time_weights_Pipeline_ln29_for_each_channel_ln33_for_block_dim_out_l  |        0|   0|  5597|  17300|    0|
+    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+---------+----+------+-------+-----+
+    |Total                                                                                    |                                                                               |        0|   0|  8291|  25915|    0|
+    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+---------+----+------+-------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |add_ln29_10_fu_200_p2  |         +|   0|  0|  12|           5|           5|
+    |add_ln29_11_fu_206_p2  |         +|   0|  0|  12|           5|           4|
+    |add_ln29_12_fu_212_p2  |         +|   0|  0|  12|           5|           4|
+    |add_ln29_13_fu_218_p2  |         +|   0|  0|  12|           5|           3|
+    |add_ln29_1_fu_140_p2   |         +|   0|  0|  12|           5|           3|
+    |add_ln29_2_fu_146_p2   |         +|   0|  0|  12|           5|           3|
+    |add_ln29_3_fu_152_p2   |         +|   0|  0|  12|           5|           4|
+    |add_ln29_4_fu_158_p2   |         +|   0|  0|  12|           5|           4|
+    |add_ln29_5_fu_164_p2   |         +|   0|  0|  12|           5|           4|
+    |add_ln29_6_fu_170_p2   |         +|   0|  0|  12|           5|           4|
+    |add_ln29_7_fu_182_p2   |         +|   0|  0|  12|           5|           5|
+    |add_ln29_8_fu_188_p2   |         +|   0|  0|  12|           5|           5|
+    |add_ln29_9_fu_194_p2   |         +|   0|  0|  12|           5|           5|
+    |add_ln29_fu_134_p2     |         +|   0|  0|  12|           5|           2|
+    |xor_ln29_fu_176_p2     |       xor|   0|  0|   6|           5|           6|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |Total                  |          |   0|  0| 174|          75|          61|
+    +-----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------+----+-----------+-----+-----------+
+    |          Name          | LUT| Input Size| Bits| Total Bits|
+    +------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm               |  26|          5|    1|          5|
+    |m_axi_weights_ARADDR    |  14|          3|   64|        192|
+    |m_axi_weights_ARBURST   |  14|          3|    2|          6|
+    |m_axi_weights_ARCACHE   |  14|          3|    4|         12|
+    |m_axi_weights_ARID      |  14|          3|    1|          3|
+    |m_axi_weights_ARLEN     |  14|          3|   32|         96|
+    |m_axi_weights_ARLOCK    |  14|          3|    2|          6|
+    |m_axi_weights_ARPROT    |  14|          3|    3|          9|
+    |m_axi_weights_ARQOS     |  14|          3|    4|         12|
+    |m_axi_weights_ARREGION  |  14|          3|    4|         12|
+    |m_axi_weights_ARSIZE    |  14|          3|    3|          9|
+    |m_axi_weights_ARUSER    |  14|          3|    1|          3|
+    |m_axi_weights_ARVALID   |  14|          3|    1|          3|
+    |m_axi_weights_RREADY    |  14|          3|    1|          3|
+    +------------------------+----+-----------+-----+-----------+
+    |Total                   | 208|         44|  123|        371|
+    +------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |                                                 Name                                                 | FF| LUT| Bits| Const Bits|
+    +------------------------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                                                                                             |  4|   0|    4|          0|
+    |grp_load_one_time_weights_Pipeline_ln13_for_block_dim_out_fu_88_ap_start_reg                          |  1|   0|    1|          0|
+    |grp_load_one_time_weights_Pipeline_ln29_for_each_channel_ln33_for_block_dim_out_l_fu_99_ap_start_reg  |  1|   0|    1|          0|
+    |shl_ln38_10_reg_450                                                                                   |  5|   0|    8|          3|
+    |shl_ln38_11_reg_455                                                                                   |  5|   0|    8|          3|
+    |shl_ln38_12_reg_460                                                                                   |  5|   0|    8|          3|
+    |shl_ln38_13_reg_465                                                                                   |  5|   0|    8|          3|
+    |shl_ln38_14_reg_470                                                                                   |  5|   0|    8|          3|
+    |shl_ln38_1_reg_400                                                                                    |  5|   0|    8|          3|
+    |shl_ln38_2_reg_405                                                                                    |  5|   0|    8|          3|
+    |shl_ln38_3_reg_410                                                                                    |  5|   0|    8|          3|
+    |shl_ln38_4_reg_415                                                                                    |  5|   0|    8|          3|
+    |shl_ln38_5_reg_420                                                                                    |  5|   0|    8|          3|
+    |shl_ln38_6_reg_425                                                                                    |  5|   0|    8|          3|
+    |shl_ln38_7_reg_430                                                                                    |  5|   0|    8|          3|
+    |shl_ln38_8_reg_435                                                                                    |  5|   0|    8|          3|
+    |shl_ln38_9_reg_440                                                                                    |  5|   0|    8|          3|
+    |shl_ln38_s_reg_445                                                                                    |  5|   0|    8|          3|
+    |shl_ln_reg_395                                                                                        |  5|   0|    8|          3|
+    |trunc_ln16_reg_385                                                                                    |  5|   0|    5|          0|
+    +------------------------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |Total                                                                                                 | 91|   0|  139|         48|
+    +------------------------------------------------------------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------------+-----+------+------------+--------------------------+--------------+
+|           RTL Ports          | Dir | Bits |  Protocol  |       Source Object      |    C Type    |
++------------------------------+-----+------+------------+--------------------------+--------------+
+|ap_clk                        |   in|     1|  ap_ctrl_hs|     load_one_time_weights|  return value|
+|ap_rst                        |   in|     1|  ap_ctrl_hs|     load_one_time_weights|  return value|
+|ap_start                      |   in|     1|  ap_ctrl_hs|     load_one_time_weights|  return value|
+|ap_done                       |  out|     1|  ap_ctrl_hs|     load_one_time_weights|  return value|
+|ap_idle                       |  out|     1|  ap_ctrl_hs|     load_one_time_weights|  return value|
+|ap_ready                      |  out|     1|  ap_ctrl_hs|     load_one_time_weights|  return value|
+|m_axi_weights_AWVALID         |  out|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_AWREADY         |   in|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_AWADDR          |  out|    64|       m_axi|                   weights|       pointer|
+|m_axi_weights_AWID            |  out|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_AWLEN           |  out|    32|       m_axi|                   weights|       pointer|
+|m_axi_weights_AWSIZE          |  out|     3|       m_axi|                   weights|       pointer|
+|m_axi_weights_AWBURST         |  out|     2|       m_axi|                   weights|       pointer|
+|m_axi_weights_AWLOCK          |  out|     2|       m_axi|                   weights|       pointer|
+|m_axi_weights_AWCACHE         |  out|     4|       m_axi|                   weights|       pointer|
+|m_axi_weights_AWPROT          |  out|     3|       m_axi|                   weights|       pointer|
+|m_axi_weights_AWQOS           |  out|     4|       m_axi|                   weights|       pointer|
+|m_axi_weights_AWREGION        |  out|     4|       m_axi|                   weights|       pointer|
+|m_axi_weights_AWUSER          |  out|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_WVALID          |  out|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_WREADY          |   in|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_WDATA           |  out|   256|       m_axi|                   weights|       pointer|
+|m_axi_weights_WSTRB           |  out|    32|       m_axi|                   weights|       pointer|
+|m_axi_weights_WLAST           |  out|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_WID             |  out|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_WUSER           |  out|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_ARVALID         |  out|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_ARREADY         |   in|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_ARADDR          |  out|    64|       m_axi|                   weights|       pointer|
+|m_axi_weights_ARID            |  out|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_ARLEN           |  out|    32|       m_axi|                   weights|       pointer|
+|m_axi_weights_ARSIZE          |  out|     3|       m_axi|                   weights|       pointer|
+|m_axi_weights_ARBURST         |  out|     2|       m_axi|                   weights|       pointer|
+|m_axi_weights_ARLOCK          |  out|     2|       m_axi|                   weights|       pointer|
+|m_axi_weights_ARCACHE         |  out|     4|       m_axi|                   weights|       pointer|
+|m_axi_weights_ARPROT          |  out|     3|       m_axi|                   weights|       pointer|
+|m_axi_weights_ARQOS           |  out|     4|       m_axi|                   weights|       pointer|
+|m_axi_weights_ARREGION        |  out|     4|       m_axi|                   weights|       pointer|
+|m_axi_weights_ARUSER          |  out|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_RVALID          |   in|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_RREADY          |  out|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_RDATA           |   in|   256|       m_axi|                   weights|       pointer|
+|m_axi_weights_RLAST           |   in|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_RID             |   in|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_RFIFONUM        |   in|     9|       m_axi|                   weights|       pointer|
+|m_axi_weights_RUSER           |   in|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_RRESP           |   in|     2|       m_axi|                   weights|       pointer|
+|m_axi_weights_BVALID          |   in|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_BREADY          |  out|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_BRESP           |   in|     2|       m_axi|                   weights|       pointer|
+|m_axi_weights_BID             |   in|     1|       m_axi|                   weights|       pointer|
+|m_axi_weights_BUSER           |   in|     1|       m_axi|                   weights|       pointer|
+|patch_embed_bias_load         |   in|    64|     ap_none|     patch_embed_bias_load|        scalar|
+|patch_embed_weights_load      |   in|    64|     ap_none|  patch_embed_weights_load|        scalar|
+|patch_embed_bias_address0     |  out|     5|   ap_memory|          patch_embed_bias|         array|
+|patch_embed_bias_ce0          |  out|     1|   ap_memory|          patch_embed_bias|         array|
+|patch_embed_bias_we0          |  out|     1|   ap_memory|          patch_embed_bias|         array|
+|patch_embed_bias_d0           |  out|   128|   ap_memory|          patch_embed_bias|         array|
+|patch_embed_weights_address0  |  out|    11|   ap_memory|       patch_embed_weights|         array|
+|patch_embed_weights_ce0       |  out|     1|   ap_memory|       patch_embed_weights|         array|
+|patch_embed_weights_we0       |  out|     1|   ap_memory|       patch_embed_weights|         array|
+|patch_embed_weights_d0        |  out|  2048|   ap_memory|       patch_embed_weights|         array|
+|attn_scale_V                  |  out|    20|      ap_vld|              attn_scale_V|       pointer|
+|attn_scale_V_ap_vld           |  out|     1|      ap_vld|              attn_scale_V|       pointer|
+|norm_eps_V                    |  out|     3|      ap_vld|                norm_eps_V|       pointer|
+|norm_eps_V_ap_vld             |  out|     1|      ap_vld|                norm_eps_V|       pointer|
++------------------------------+-----+------+------------+--------------------------+--------------+
+

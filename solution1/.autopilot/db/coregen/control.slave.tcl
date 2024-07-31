@@ -1,0 +1,4 @@
+dict set slaves control {ports {images {type i_ap_none width 64} x {type i_ap_none width 64} tmp1 {type i_ap_none width 64} tmp2 {type i_ap_none width 64} tmp3 {type i_ap_none width 64} tmp_hidden {type i_ap_none width 64} attn {type i_ap_none width 64} attn_softmax_info {type i_ap_none width 64} patch_embed_weights {type i_ap_none width 64} patch_embed_bias {type i_ap_none width 64} pos_embed {type i_ap_none width 64} attn_weights {type i_ap_none width 64} attn_bias {type i_ap_none width 64} vit_weights_l1 {type i_ap_none width 64} vit_bias_l1 {type i_ap_none width 64} vit_weights_l2 {type i_ap_none width 64} vit_bias_l2 {type i_ap_none width 64} norm_weights {type i_ap_none width 64} norm_bias {type i_ap_none width 64} ap_start {type ap_ctrl width 1} ap_done {type ap_ctrl width 1} ap_ready {type ap_ctrl width 1} ap_idle {type ap_ctrl width 1}} mems {} has_ctrl 1}
+set datawidth 32
+set addrwidth 64
+set intr_clr_mode TOW

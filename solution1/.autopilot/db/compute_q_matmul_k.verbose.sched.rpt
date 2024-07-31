@@ -1,0 +1,201 @@
+
+
+================================================================
+== Vitis HLS Report for 'compute_q_matmul_k'
+================================================================
+* Date:           Wed Jul 31 17:01:02 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        Deit_cpp
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+----------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline |
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type   |
+    +---------+---------+----------+----------+--------+--------+----------+
+    |   102241|   102241|  1.022 ms|  1.022 ms|  102179|  102179|  dataflow|
+    +---------+---------+----------+----------+--------+--------+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 8, States = { 1 2 3 4 5 6 7 8 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 7.30>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%k_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %k" [Deit_cpp/src/attention.cpp:293]   --->   Operation 9 'read' 'k_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%q_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %q" [Deit_cpp/src/attention.cpp:293]   --->   Operation 10 'read' 'q_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%attn_softmax_info_c = alloca i64 1" [Deit_cpp/src/attention.cpp:293]   --->   Operation 11 'alloca' 'attn_softmax_info_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.86> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 5> <FIFO>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%attn_c = alloca i64 1" [Deit_cpp/src/attention.cpp:293]   --->   Operation 12 'alloca' 'attn_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.86> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 5> <FIFO>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%q_stream = alloca i64 1"   --->   Operation 13 'alloca' 'q_stream' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 256> <Depth = 2> <FIFO>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%k_stream = alloca i64 1"   --->   Operation 14 'alloca' 'k_stream' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 256> <Depth = 2> <FIFO>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%qxk_stream = alloca i64 1"   --->   Operation 15 'alloca' 'qxk_stream' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 2> <FIFO>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%attn_stream = alloca i64 1"   --->   Operation 16 'alloca' 'attn_stream' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%attn_softmax_info_stream = alloca i64 1"   --->   Operation 17 'alloca' 'attn_softmax_info_stream' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 256> <Depth = 2> <FIFO>
+ST_1 : Operation 18 [2/2] (7.30ns)   --->   "%call_ln301 = call void @read_x, i256 %q_stream, i256 %inout2, i64 %q_read" [Deit_cpp/src/attention.cpp:301]   --->   Operation 18 'call' 'call_ln301' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 19 [2/2] (0.00ns)   --->   "%call_ln302 = call void @read_k_v, i256 %k_stream, i256 %inout3, i64 %k_read" [Deit_cpp/src/attention.cpp:302]   --->   Operation 19 'call' 'call_ln302' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 20 [1/2] (0.00ns)   --->   "%call_ln301 = call void @read_x, i256 %q_stream, i256 %inout2, i64 %q_read" [Deit_cpp/src/attention.cpp:301]   --->   Operation 20 'call' 'call_ln301' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 21 [1/2] (0.00ns)   --->   "%call_ln302 = call void @read_k_v, i256 %k_stream, i256 %inout3, i64 %k_read" [Deit_cpp/src/attention.cpp:302]   --->   Operation 21 'call' 'call_ln302' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 22 [2/2] (0.00ns)   --->   "%call_ln303 = call void @compute_q_matmul_k.5, i512 %qxk_stream, i256 %q_stream, i256 %k_stream, i20 %attn_scale_V" [Deit_cpp/src/attention.cpp:303]   --->   Operation 22 'call' 'call_ln303' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 23 [1/2] (0.00ns)   --->   "%call_ln303 = call void @compute_q_matmul_k.5, i512 %qxk_stream, i256 %q_stream, i256 %k_stream, i20 %attn_scale_V" [Deit_cpp/src/attention.cpp:303]   --->   Operation 23 'call' 'call_ln303' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 24 [2/2] (0.00ns)   --->   "%call_ln304 = call void @finalize_attn, i512 %qxk_stream, i128 %attn_stream, i256 %attn_softmax_info_stream, i6 %f_x_msb_4_h_table_V, i7 %f_x_msb_4_l_table_V, i8 %f_x_lsb_table_V, i32 %f_x_msb_3_table_V, i46 %f_x_msb_2_table_V, i50 %exp_x_msb_1_table_V" [Deit_cpp/src/attention.cpp:304]   --->   Operation 24 'call' 'call_ln304' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 1.86>
+ST_6 : Operation 25 [1/1] (0.00ns)   --->   "%attn_softmax_info_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %attn_softmax_info" [Deit_cpp/src/attention.cpp:293]   --->   Operation 25 'read' 'attn_softmax_info_read' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 26 [1/1] (0.00ns)   --->   "%attn_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %attn" [Deit_cpp/src/attention.cpp:293]   --->   Operation 26 'read' 'attn_read' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 27 [1/1] (1.86ns)   --->   "%call_ln293 = call void @entry_proc, i64 %attn_read, i64 %attn_c, i64 %attn_softmax_info_read, i64 %attn_softmax_info_c" [Deit_cpp/src/attention.cpp:293]   --->   Operation 27 'call' 'call_ln293' <Predicate = true> <Delay = 1.86> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 28 [1/2] (0.00ns)   --->   "%call_ln304 = call void @finalize_attn, i512 %qxk_stream, i128 %attn_stream, i256 %attn_softmax_info_stream, i6 %f_x_msb_4_h_table_V, i7 %f_x_msb_4_l_table_V, i8 %f_x_lsb_table_V, i32 %f_x_msb_3_table_V, i46 %f_x_msb_2_table_V, i50 %exp_x_msb_1_table_V" [Deit_cpp/src/attention.cpp:304]   --->   Operation 28 'call' 'call_ln304' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 29 [2/2] (0.00ns)   --->   "%call_ln305 = call void @write_attn, i128 %attn_stream, i256 %inout1, i64 %attn_c" [Deit_cpp/src/attention.cpp:305]   --->   Operation 29 'call' 'call_ln305' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 30 [2/2] (0.00ns)   --->   "%call_ln306 = call void @write_attn_softmax_info, i256 %attn_softmax_info_stream, i256 %inout4, i64 %attn_softmax_info_c" [Deit_cpp/src/attention.cpp:306]   --->   Operation 30 'call' 'call_ln306' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 31 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @attn_softmax_info_c_str, i32 1, void @p_str, void @p_str, i32 5, i32 0, i64 %attn_softmax_info_c, i64 %attn_softmax_info_c" [Deit_cpp/src/attention.cpp:293]   --->   Operation 31 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln293 = specinterface void @_ssdm_op_SpecInterface, i64 %attn_softmax_info_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0" [Deit_cpp/src/attention.cpp:293]   --->   Operation 32 'specinterface' 'specinterface_ln293' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 33 [1/1] (0.00ns)   --->   "%empty_207 = specchannel i32 @_ssdm_op_SpecChannel, void @attn_c_str, i32 1, void @p_str, void @p_str, i32 5, i32 0, i64 %attn_c, i64 %attn_c" [Deit_cpp/src/attention.cpp:293]   --->   Operation 33 'specchannel' 'empty_207' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 34 [1/1] (0.00ns)   --->   "%specinterface_ln293 = specinterface void @_ssdm_op_SpecInterface, i64 %attn_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0" [Deit_cpp/src/attention.cpp:293]   --->   Operation 34 'specinterface' 'specinterface_ln293' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 35 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln293 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_24" [Deit_cpp/src/attention.cpp:293]   --->   Operation 35 'specdataflowpipeline' 'specdataflowpipeline_ln293' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %inout4, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_40, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %inout3, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_9, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 38 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %inout2, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_8, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 38 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %inout1, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_14, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 40 [1/1] (0.00ns)   --->   "%empty_208 = specchannel i32 @_ssdm_op_SpecChannel, void @q_stream_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i256 %q_stream, i256 %q_stream"   --->   Operation 40 'specchannel' 'empty_208' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %q_stream, void @empty_71, i32 0, i32 0, void @empty_24, i32 0, i32 0, void @empty_24, void @empty_24, void @empty_24, i32 0, i32 0, i32 0, i32 0, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 42 [1/1] (0.00ns)   --->   "%empty_209 = specchannel i32 @_ssdm_op_SpecChannel, void @k_stream_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i256 %k_stream, i256 %k_stream"   --->   Operation 42 'specchannel' 'empty_209' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %k_stream, void @empty_71, i32 0, i32 0, void @empty_24, i32 0, i32 0, void @empty_24, void @empty_24, void @empty_24, i32 0, i32 0, i32 0, i32 0, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 44 [1/1] (0.00ns)   --->   "%empty_210 = specchannel i32 @_ssdm_op_SpecChannel, void @qxk_stream_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i512 %qxk_stream, i512 %qxk_stream"   --->   Operation 44 'specchannel' 'empty_210' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %qxk_stream, void @empty_71, i32 0, i32 0, void @empty_24, i32 0, i32 0, void @empty_24, void @empty_24, void @empty_24, i32 0, i32 0, i32 0, i32 0, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 46 [1/1] (0.00ns)   --->   "%empty_211 = specchannel i32 @_ssdm_op_SpecChannel, void @attn_stream_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i128 %attn_stream, i128 %attn_stream"   --->   Operation 46 'specchannel' 'empty_211' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 47 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %attn_stream, void @empty_71, i32 0, i32 0, void @empty_24, i32 0, i32 0, void @empty_24, void @empty_24, void @empty_24, i32 0, i32 0, i32 0, i32 0, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 47 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 48 [1/1] (0.00ns)   --->   "%empty_212 = specchannel i32 @_ssdm_op_SpecChannel, void @attn_softmax_info_stream_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i256 %attn_softmax_info_stream, i256 %attn_softmax_info_stream"   --->   Operation 48 'specchannel' 'empty_212' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 49 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %attn_softmax_info_stream, void @empty_71, i32 0, i32 0, void @empty_24, i32 0, i32 0, void @empty_24, void @empty_24, void @empty_24, i32 0, i32 0, i32 0, i32 0, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 49 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 50 [1/2] (0.00ns)   --->   "%call_ln305 = call void @write_attn, i128 %attn_stream, i256 %inout1, i64 %attn_c" [Deit_cpp/src/attention.cpp:305]   --->   Operation 50 'call' 'call_ln305' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 51 [1/2] (0.00ns)   --->   "%call_ln306 = call void @write_attn_softmax_info, i256 %attn_softmax_info_stream, i256 %inout4, i64 %attn_softmax_info_c" [Deit_cpp/src/attention.cpp:306]   --->   Operation 51 'call' 'call_ln306' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 52 [1/1] (0.00ns)   --->   "%ret_ln307 = ret" [Deit_cpp/src/attention.cpp:307]   --->   Operation 52 'ret' 'ret_ln307' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 7.3ns
+The critical path consists of the following:
+	wire read operation ('q_read', Deit_cpp/src/attention.cpp:293) on port 'q' (Deit_cpp/src/attention.cpp:293) [19]  (0 ns)
+	'call' operation ('call_ln301', Deit_cpp/src/attention.cpp:301) to 'read_x' [47]  (7.3 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 1.86ns
+The critical path consists of the following:
+	wire read operation ('attn_softmax_info_read', Deit_cpp/src/attention.cpp:293) on port 'attn_softmax_info' (Deit_cpp/src/attention.cpp:293) [16]  (0 ns)
+	'call' operation ('call_ln293', Deit_cpp/src/attention.cpp:293) to 'entry_proc' [46]  (1.86 ns)
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

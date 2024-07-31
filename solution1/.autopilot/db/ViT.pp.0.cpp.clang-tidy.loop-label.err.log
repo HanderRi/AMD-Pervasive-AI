@@ -1,0 +1,12 @@
+8 warnings and 26 errors generated.
+Error while processing E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\ViT.pp.0.cpp.
+Trying to resolve conflict: The new insertion has the same insert location as an existing replacement.
+New replacement: E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\ViT.pp.0.cpp: 2136924:+0:"
+#pragma HLS aggregate variable = attn_softmax_info
+"
+Existing replacement: E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\ViT.pp.0.cpp: 2136924:+0:"
+#pragma HLS aggregate variable = tmp_hidden
+"
+clang-tidy applied 181 of 181 suggested fixes.
+Suppressed 49 warnings (45 in non-user code, 4 with check filters).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.

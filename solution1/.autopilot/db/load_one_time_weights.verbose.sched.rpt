@@ -1,0 +1,171 @@
+
+
+================================================================
+== Vitis HLS Report for 'load_one_time_weights'
+================================================================
+* Date:           Wed Jul 31 16:57:42 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        Deit_cpp
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   147671|   147671|  1.477 ms|  1.477 ms|  147671|  147671|       no|
+    +---------+---------+----------+----------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.08>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%patch_embed_bias_load_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %patch_embed_bias_load" [Deit_cpp/src/ViT.cpp:6]   --->   Operation 5 'read' 'patch_embed_bias_load_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%trunc_ln16 = trunc i64 %patch_embed_bias_load_read" [Deit_cpp/src/ViT.cpp:16]   --->   Operation 6 'trunc' 'trunc_ln16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [2/2] (1.08ns)   --->   "%call_ln6 = call void @load_one_time_weights_Pipeline__ln13_for_block_dim_out, i64 %patch_embed_bias_load_read, i256 %weights, i5 %trunc_ln16, i128 %patch_embed_bias" [Deit_cpp/src/ViT.cpp:6]   --->   Operation 7 'call' 'call_ln6' <Predicate = true> <Delay = 1.08> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 8 [1/2] (0.00ns)   --->   "%call_ln6 = call void @load_one_time_weights_Pipeline__ln13_for_block_dim_out, i64 %patch_embed_bias_load_read, i256 %weights, i5 %trunc_ln16, i128 %patch_embed_bias" [Deit_cpp/src/ViT.cpp:6]   --->   Operation 8 'call' 'call_ln6' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.78>
+ST_3 : Operation 9 [1/1] (0.00ns)   --->   "%patch_embed_weights_load_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %patch_embed_weights_load" [Deit_cpp/src/ViT.cpp:6]   --->   Operation 9 'read' 'patch_embed_weights_load_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 10 [1/1] (0.00ns)   --->   "%trunc_ln29 = trunc i64 %patch_embed_weights_load_read" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 10 'trunc' 'trunc_ln29' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 11 [1/1] (0.78ns)   --->   "%add_ln29 = add i5 %trunc_ln29, i5 2" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 11 'add' 'add_ln29' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 12 [1/1] (0.78ns)   --->   "%add_ln29_1 = add i5 %trunc_ln29, i5 4" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 12 'add' 'add_ln29_1' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 13 [1/1] (0.78ns)   --->   "%add_ln29_2 = add i5 %trunc_ln29, i5 6" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 13 'add' 'add_ln29_2' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 14 [1/1] (0.78ns)   --->   "%add_ln29_3 = add i5 %trunc_ln29, i5 8" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 14 'add' 'add_ln29_3' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 15 [1/1] (0.78ns)   --->   "%add_ln29_4 = add i5 %trunc_ln29, i5 10" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 15 'add' 'add_ln29_4' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 16 [1/1] (0.78ns)   --->   "%add_ln29_5 = add i5 %trunc_ln29, i5 12" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 16 'add' 'add_ln29_5' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 17 [1/1] (0.78ns)   --->   "%add_ln29_6 = add i5 %trunc_ln29, i5 14" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 17 'add' 'add_ln29_6' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 18 [1/1] (0.19ns)   --->   "%xor_ln29 = xor i5 %trunc_ln29, i5 16" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 18 'xor' 'xor_ln29' <Predicate = true> <Delay = 0.19> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.19> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 19 [1/1] (0.78ns)   --->   "%add_ln29_7 = add i5 %trunc_ln29, i5 18" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 19 'add' 'add_ln29_7' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 20 [1/1] (0.78ns)   --->   "%add_ln29_8 = add i5 %trunc_ln29, i5 20" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 20 'add' 'add_ln29_8' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 21 [1/1] (0.78ns)   --->   "%add_ln29_9 = add i5 %trunc_ln29, i5 22" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 21 'add' 'add_ln29_9' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 22 [1/1] (0.78ns)   --->   "%add_ln29_10 = add i5 %trunc_ln29, i5 24" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 22 'add' 'add_ln29_10' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 23 [1/1] (0.78ns)   --->   "%add_ln29_11 = add i5 %trunc_ln29, i5 26" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 23 'add' 'add_ln29_11' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 24 [1/1] (0.78ns)   --->   "%add_ln29_12 = add i5 %trunc_ln29, i5 28" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 24 'add' 'add_ln29_12' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 25 [1/1] (0.78ns)   --->   "%add_ln29_13 = add i5 %trunc_ln29, i5 30" [Deit_cpp/src/ViT.cpp:29]   --->   Operation 25 'add' 'add_ln29_13' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %trunc_ln29, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 26 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%shl_ln38_1 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln29, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 27 'bitconcatenate' 'shl_ln38_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%shl_ln38_2 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln29_1, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 28 'bitconcatenate' 'shl_ln38_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%shl_ln38_3 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln29_2, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 29 'bitconcatenate' 'shl_ln38_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%shl_ln38_4 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln29_3, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 30 'bitconcatenate' 'shl_ln38_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%shl_ln38_5 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln29_4, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 31 'bitconcatenate' 'shl_ln38_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%shl_ln38_6 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln29_5, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 32 'bitconcatenate' 'shl_ln38_6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%shl_ln38_7 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln29_6, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 33 'bitconcatenate' 'shl_ln38_7' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%shl_ln38_8 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %xor_ln29, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 34 'bitconcatenate' 'shl_ln38_8' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%shl_ln38_9 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln29_7, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 35 'bitconcatenate' 'shl_ln38_9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%shl_ln38_s = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln29_8, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 36 'bitconcatenate' 'shl_ln38_s' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%shl_ln38_10 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln29_9, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 37 'bitconcatenate' 'shl_ln38_10' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%shl_ln38_11 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln29_10, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 38 'bitconcatenate' 'shl_ln38_11' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%shl_ln38_12 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln29_11, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 39 'bitconcatenate' 'shl_ln38_12' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%shl_ln38_13 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln29_12, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 40 'bitconcatenate' 'shl_ln38_13' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%shl_ln38_14 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln29_13, i3 0" [Deit_cpp/src/ViT.cpp:38]   --->   Operation 41 'bitconcatenate' 'shl_ln38_14' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 42 [2/2] (0.00ns)   --->   "%call_ln6 = call void @load_one_time_weights_Pipeline__ln29_for_each_channel__ln33_for_block_dim_out__l, i64 %patch_embed_weights_load_read, i256 %weights, i8 %shl_ln, i8 %shl_ln38_1, i8 %shl_ln38_2, i8 %shl_ln38_3, i8 %shl_ln38_4, i8 %shl_ln38_5, i8 %shl_ln38_6, i8 %shl_ln38_7, i8 %shl_ln38_8, i8 %shl_ln38_9, i8 %shl_ln38_s, i8 %shl_ln38_10, i8 %shl_ln38_11, i8 %shl_ln38_12, i8 %shl_ln38_13, i8 %shl_ln38_14, i2048 %patch_embed_weights" [Deit_cpp/src/ViT.cpp:6]   --->   Operation 42 'call' 'call_ln6' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %weights, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_11, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 44 [1/2] (0.00ns)   --->   "%call_ln6 = call void @load_one_time_weights_Pipeline__ln29_for_each_channel__ln33_for_block_dim_out__l, i64 %patch_embed_weights_load_read, i256 %weights, i8 %shl_ln, i8 %shl_ln38_1, i8 %shl_ln38_2, i8 %shl_ln38_3, i8 %shl_ln38_4, i8 %shl_ln38_5, i8 %shl_ln38_6, i8 %shl_ln38_7, i8 %shl_ln38_8, i8 %shl_ln38_9, i8 %shl_ln38_s, i8 %shl_ln38_10, i8 %shl_ln38_11, i8 %shl_ln38_12, i8 %shl_ln38_13, i8 %shl_ln38_14, i2048 %patch_embed_weights" [Deit_cpp/src/ViT.cpp:6]   --->   Operation 44 'call' 'call_ln6' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "%store_ln59 = store i20 524288, i20 %attn_scale_V" [Deit_cpp/src/ViT.cpp:59]   --->   Operation 45 'store' 'store_ln59' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "%store_ln60 = store i3 4, i3 %norm_eps_V" [Deit_cpp/src/ViT.cpp:60]   --->   Operation 46 'store' 'store_ln60' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "%ret_ln61 = ret" [Deit_cpp/src/ViT.cpp:61]   --->   Operation 47 'ret' 'ret_ln61' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.08ns
+The critical path consists of the following:
+	wire read operation ('patch_embed_bias_load_read', Deit_cpp/src/ViT.cpp:6) on port 'patch_embed_bias_load' (Deit_cpp/src/ViT.cpp:6) [10]  (0 ns)
+	'call' operation ('call_ln6', Deit_cpp/src/ViT.cpp:6) to 'load_one_time_weights_Pipeline__ln13_for_block_dim_out' [12]  (1.08 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0.789ns
+The critical path consists of the following:
+	wire read operation ('patch_embed_weights_load_read', Deit_cpp/src/ViT.cpp:6) on port 'patch_embed_weights_load' (Deit_cpp/src/ViT.cpp:6) [9]  (0 ns)
+	'add' operation ('add_ln29', Deit_cpp/src/ViT.cpp:29) [14]  (0.789 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

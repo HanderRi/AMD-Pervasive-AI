@@ -1,0 +1,12 @@
+   Build using "E:/Xilinx/Vitis_HLS/2022.2/tps/win64/msys64/mingw64/bin/g++"
+   Compiling layernorm.cpp_pre.cpp.tb.cpp
+   Compiling add.cpp_pre.cpp.tb.cpp
+   Compiling apatb_ViT_act.cpp
+   Compiling testbench.cpp_pre.cpp.tb.cpp
+   Compiling gelu.cpp_pre.cpp.tb.cpp
+   Compiling conv.cpp_pre.cpp.tb.cpp
+   Compiling linear.cpp_pre.cpp.tb.cpp
+   Compiling ViT.cpp_pre.cpp.tb.cpp
+   Compiling attention.cpp_pre.cpp.tb.cpp
+   Compiling apatb_ViT_act_ir.ll
+   Generating cosim.tv.exe

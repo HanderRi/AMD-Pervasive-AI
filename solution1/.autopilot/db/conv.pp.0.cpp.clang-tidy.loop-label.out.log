@@ -1,0 +1,853 @@
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:5946:7: warning: Added loop label VITIS_LOOP_1211_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1211_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:5946:7: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:6920:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:6920:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:6934:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:6934:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:6948:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:6948:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:8547:7: warning: Added loop label VITIS_LOOP_1245_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1245_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:8547:7: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12683:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K0 type=ROM_1P impl=LUTRAM
+                                                                       ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12684:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K1 type=ROM_1P impl=LUTRAM
+                                                                       ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12685:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K2 type=ROM_1P impl=LUTRAM
+                                                                       ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12686:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K3 type=ROM_1P impl=LUTRAM
+                                                                       ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12687:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K4 type=ROM_1P impl=LUTRAM
+                                                                       ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12717:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K0 type=ROM_1P impl=LUTRAM
+                                                                   ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12718:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K1 type=ROM_1P impl=LUTRAM
+                                                                   ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12719:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K2 type=ROM_1P impl=LUTRAM
+                                                                   ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12720:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K3 type=ROM_1P impl=LUTRAM
+                                                                   ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12721:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K4 type=ROM_1P impl=LUTRAM
+                                                                   ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12722:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K0 type=ROM_1P impl=LUTRAM
+                                                                   ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12723:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K1 type=ROM_1P impl=LUTRAM
+                                                                   ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12724:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K2 type=ROM_1P impl=LUTRAM
+                                                                   ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12725:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K3 type=ROM_1P impl=LUTRAM
+                                                                   ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12726:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K4 type=ROM_1P impl=LUTRAM
+                                                                   ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12776:71: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_cos_K0 type=ROM_1P impl=LUTRAM
+                                                                      ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12777:71: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_cos_K1 type=ROM_1P impl=LUTRAM
+                                                                      ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12778:71: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_cos_K2 type=ROM_1P impl=LUTRAM
+                                                                      ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12805:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::cos_K0 type=ROM_1P impl=LUTRAM
+                                                                  ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12806:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::cos_K1 type=ROM_1P impl=LUTRAM
+                                                                  ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12807:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::cos_K2 type=ROM_1P impl=LUTRAM
+                                                                  ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12808:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_K0 type=ROM_1P impl=LUTRAM
+                                                                  ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12809:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_K1 type=ROM_1P impl=LUTRAM
+                                                                  ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12810:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_K2 type=ROM_1P impl=LUTRAM
+                                                                  ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12846:73: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=first_order_fixed_16::sin_cos_K0 type=ROM_1P impl=LUTRAM
+                                                                        ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:12847:73: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=first_order_fixed_16::sin_cos_K1 type=ROM_1P impl=LUTRAM
+                                                                        ^
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13121:5: warning: Added loop label VITIS_LOOP_87_1:   [xilinx-label-all-loops]
+    for (int n=0; n<Nmax; n++){
+    ^~~
+    VITIS_LOOP_87_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13121:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13167:5: warning: Added loop label VITIS_LOOP_143_1:   [xilinx-label-all-loops]
+    for (int n=0; n<Nmax; n++){
+    ^~~
+    VITIS_LOOP_143_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13167:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13330:9: warning: Added loop label VITIS_LOOP_315_1:   [xilinx-label-all-loops]
+        for(int i=0;i<W-1;i++){
+        ^~~
+        VITIS_LOOP_315_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13330:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13482:9: warning: Added loop label VITIS_LOOP_475_1:   [xilinx-label-all-loops]
+        for(int i=0;i<W-1;i++){
+        ^~~
+        VITIS_LOOP_475_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13482:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13662:5: warning: Added loop label VITIS_LOOP_655_1:   [xilinx-label-all-loops]
+    for(int i=0;i<W+1;i++){
+    ^~~
+    VITIS_LOOP_655_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13662:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13666:5: warning: Added loop label VITIS_LOOP_659_2:   [xilinx-label-all-loops]
+    for(int i=0;i<W+1;i++){
+    ^~~
+    VITIS_LOOP_659_2: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13666:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13776:5: warning: Added loop label VITIS_LOOP_769_1:   [xilinx-label-all-loops]
+    for (int n=0; n<Nmax; n++){
+    ^~~
+    VITIS_LOOP_769_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13776:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13866:7: warning: Added loop label VITIS_LOOP_866_1:   [xilinx-label-all-loops]
+      for(int i=0;i<W-1;i++){
+      ^~~
+      VITIS_LOOP_866_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13866:7: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13885:7: warning: Added loop label VITIS_LOOP_885_2:   [xilinx-label-all-loops]
+      for(int i=0;i<W-1;i++){
+      ^~~
+      VITIS_LOOP_885_2: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:13885:7: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14175:5: warning: Added loop label VITIS_LOOP_1199_1:   [xilinx-label-all-loops]
+    for(int i=0; i<Nmax; i++) {
+    ^~~
+    VITIS_LOOP_1199_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14175:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14258:5: warning: Added loop label VITIS_LOOP_1282_1:   [xilinx-label-all-loops]
+    for(int i=0; i<Nmax; i++) {
+    ^~~
+    VITIS_LOOP_1282_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14258:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14664:13: warning: Added loop label VITIS_LOOP_94_1:   [xilinx-label-all-loops]
+            for (int j = 3; j >= I_+1; j--) {
+            ^~~
+            VITIS_LOOP_94_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14664:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14670:17: warning: Added loop label VITIS_LOOP_100_2:   [xilinx-label-all-loops]
+                for (int j = 3; j >= I_+1; j--){
+                ^~~
+                VITIS_LOOP_100_2: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14670:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14674:17: warning: Added loop label VITIS_LOOP_104_3:   [xilinx-label-all-loops]
+                for (int j = I_; j >= 0; j--){
+                ^~~
+                VITIS_LOOP_104_3: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14674:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14722:13: warning: Added loop label VITIS_LOOP_171_4:   [xilinx-label-all-loops]
+            for (int j = 9; j >= I_+4; j--) {
+            ^~~
+            VITIS_LOOP_171_4: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14722:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14728:17: warning: Added loop label VITIS_LOOP_177_5:   [xilinx-label-all-loops]
+                for (int j = 9; j >= I_+4; j--){
+                ^~~
+                VITIS_LOOP_177_5: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14728:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14732:17: warning: Added loop label VITIS_LOOP_181_6:   [xilinx-label-all-loops]
+                for (int j = I_+3; j >= 0; j--){
+                ^~~
+                VITIS_LOOP_181_6: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14732:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14747:9: warning: Added loop label VITIS_LOOP_196_7:   [xilinx-label-all-loops]
+        for (int j = 14; j < 22; j++){
+        ^~~
+        VITIS_LOOP_196_7: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14747:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14755:17: warning: Added loop label VITIS_LOOP_204_8:   [xilinx-label-all-loops]
+                for (int j = 0; j < 22; j++){
+                ^~~
+                VITIS_LOOP_204_8: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14755:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14820:13: warning: Added loop label VITIS_LOOP_269_9:   [xilinx-label-all-loops]
+            for (int j = 21; j >= I_+10; j--) {
+            ^~~
+            VITIS_LOOP_269_9: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14820:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14826:17: warning: Added loop label VITIS_LOOP_275_10:   [xilinx-label-all-loops]
+                for (int j = 21; j >= I_+10; j--) {
+                ^~~
+                VITIS_LOOP_275_10: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14826:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14830:17: warning: Added loop label VITIS_LOOP_279_11:   [xilinx-label-all-loops]
+                for (int j = I_+9; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_279_11: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14830:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14845:9: warning: Added loop label VITIS_LOOP_294_12:   [xilinx-label-all-loops]
+        for (int j = 27; j < 46; j++){
+        ^~~
+        VITIS_LOOP_294_12: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14845:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14853:17: warning: Added loop label VITIS_LOOP_302_13:   [xilinx-label-all-loops]
+                for (int j = 0; j < 46; j++) {
+                ^~~
+                VITIS_LOOP_302_13: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:14853:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15082:13: warning: Added loop label VITIS_LOOP_531_14:   [xilinx-label-all-loops]
+            for (int j = 45; j >= I_+22; j--) {
+            ^~~
+            VITIS_LOOP_531_14: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15082:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15088:17: warning: Added loop label VITIS_LOOP_537_15:   [xilinx-label-all-loops]
+                for (int j = 45; j >= I_+22; j--){
+                ^~~
+                VITIS_LOOP_537_15: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15088:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15092:17: warning: Added loop label VITIS_LOOP_541_16:   [xilinx-label-all-loops]
+                for (int j = I_+21; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_541_16: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15092:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15102:9: warning: Added loop label VITIS_LOOP_551_17:   [xilinx-label-all-loops]
+        for (int j = 32-F_; j < 32+I_; j++){
+        ^~~
+        VITIS_LOOP_551_17: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15102:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15106:9: warning: Added loop label VITIS_LOOP_555_18:   [xilinx-label-all-loops]
+        for (int j = 32+I_; j <= 64; j++){
+        ^~~
+        VITIS_LOOP_555_18: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15106:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15116:9: warning: Added loop label VITIS_LOOP_565_19:   [xilinx-label-all-loops]
+        for (int j = 37; j < 64; j++) {
+        ^~~
+        VITIS_LOOP_565_19: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15116:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15124:17: warning: Added loop label VITIS_LOOP_573_20:   [xilinx-label-all-loops]
+                for (int j = 0; j < 64; j++){
+                ^~~
+                VITIS_LOOP_573_20: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15124:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15485:13: warning: Added loop label VITIS_LOOP_934_21:   [xilinx-label-all-loops]
+            for (int j = 63; j >= I_+31; j--) {
+            ^~~
+            VITIS_LOOP_934_21: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15485:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15491:17: warning: Added loop label VITIS_LOOP_940_22:   [xilinx-label-all-loops]
+                for (int j = 63; j >= I_+31; j--) {
+                ^~~
+                VITIS_LOOP_940_22: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15491:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15495:17: warning: Added loop label VITIS_LOOP_944_23:   [xilinx-label-all-loops]
+                for (int j = I_+30; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_944_23: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15495:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15611:13: warning: Added loop label VITIS_LOOP_1060_1:   [xilinx-label-all-loops]
+            for (int j = 4; j >= I_+1; j--) {
+            ^~~
+            VITIS_LOOP_1060_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15611:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15617:17: warning: Added loop label VITIS_LOOP_1066_2:   [xilinx-label-all-loops]
+                for (int j = 4; j >= I_+1; j--) {
+                ^~~
+                VITIS_LOOP_1066_2: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15617:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15621:17: warning: Added loop label VITIS_LOOP_1070_3:   [xilinx-label-all-loops]
+                for (int j = I_; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_1070_3: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15621:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15708:13: warning: Added loop label VITIS_LOOP_1157_4:   [xilinx-label-all-loops]
+            for (int j = 10; j >= I_+4; j--) {
+            ^~~
+            VITIS_LOOP_1157_4: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15708:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15714:17: warning: Added loop label VITIS_LOOP_1163_5:   [xilinx-label-all-loops]
+                for (int j = 10; j >= I_+4; j--) {
+                ^~~
+                VITIS_LOOP_1163_5: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15714:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15718:17: warning: Added loop label VITIS_LOOP_1167_6:   [xilinx-label-all-loops]
+                for (int j = I_+3; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_1167_6: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15718:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15737:9: warning: Added loop label VITIS_LOOP_1186_7:   [xilinx-label-all-loops]
+        for (int j = wf+3; j < w-1; j++) {
+        ^~~
+        VITIS_LOOP_1186_7: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15737:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15744:17: warning: Added loop label VITIS_LOOP_1193_8:   [xilinx-label-all-loops]
+                for (int j = 0; j < 22; j++) {
+                ^~~
+                VITIS_LOOP_1193_8: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15744:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15860:13: warning: Added loop label VITIS_LOOP_1309_9:   [xilinx-label-all-loops]
+            for (int j = 22; j >= I_+10; j--) {
+            ^~~
+            VITIS_LOOP_1309_9: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15860:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15866:17: warning: Added loop label VITIS_LOOP_1315_10:   [xilinx-label-all-loops]
+                for (int j = 22; j >= I_+10; j--){
+                ^~~
+                VITIS_LOOP_1315_10: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15866:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15870:17: warning: Added loop label VITIS_LOOP_1319_11:   [xilinx-label-all-loops]
+                for (int j = I_+9; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_1319_11: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15870:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15890:9: warning: Added loop label VITIS_LOOP_1339_12:   [xilinx-label-all-loops]
+        for (int j = wf+4; j < w-1; j++){
+        ^~~
+        VITIS_LOOP_1339_12: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15890:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15897:17: warning: Added loop label VITIS_LOOP_1346_13:   [xilinx-label-all-loops]
+                for (int j = 0; j < 46; j++) {
+                ^~~
+                VITIS_LOOP_1346_13: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:15897:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16159:13: warning: Added loop label VITIS_LOOP_1608_14:   [xilinx-label-all-loops]
+            for (int j = 46; j >= I_+22; j--) {
+            ^~~
+            VITIS_LOOP_1608_14: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16159:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16165:17: warning: Added loop label VITIS_LOOP_1614_15:   [xilinx-label-all-loops]
+                for (int j = 46; j >= I_+22; j--) {
+                ^~~
+                VITIS_LOOP_1614_15: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16165:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16169:17: warning: Added loop label VITIS_LOOP_1618_16:   [xilinx-label-all-loops]
+                for (int j = I_+21; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_1618_16: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16169:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16193:9: warning: Added loop label VITIS_LOOP_1642_17:   [xilinx-label-all-loops]
+        for (int j = wf+5; j < w-1; j++){
+        ^~~
+        VITIS_LOOP_1642_17: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16193:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16200:17: warning: Added loop label VITIS_LOOP_1649_18:   [xilinx-label-all-loops]
+                for (int j = 0; j < 64; j++) {
+                ^~~
+                VITIS_LOOP_1649_18: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16200:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16630:13: warning: Added loop label VITIS_LOOP_2079_19:   [xilinx-label-all-loops]
+            for (int j = 64; j >= I_+31; j--) {
+            ^~~
+            VITIS_LOOP_2079_19: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16630:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16636:17: warning: Added loop label VITIS_LOOP_2085_20:   [xilinx-label-all-loops]
+                for (int j = 64; j >= I_+31; j--) {
+                ^~~
+                VITIS_LOOP_2085_20: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16636:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16640:17: warning: Added loop label VITIS_LOOP_2089_21:   [xilinx-label-all-loops]
+                for (int j = I_+30; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_2089_21: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16640:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16770:13: warning: Added loop label VITIS_LOOP_2219_1:   [xilinx-label-all-loops]
+            for(int j=3; j>=I+1; j--) {
+            ^~~
+            VITIS_LOOP_2219_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16770:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16777:17: warning: Added loop label VITIS_LOOP_2226_2:   [xilinx-label-all-loops]
+                for(int j=3; j>=I+1; j--) {
+                ^~~
+                VITIS_LOOP_2226_2: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16777:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16781:17: warning: Added loop label VITIS_LOOP_2230_3:   [xilinx-label-all-loops]
+                for(int j=I; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2230_3: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16781:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16828:13: warning: Added loop label VITIS_LOOP_2277_4:   [xilinx-label-all-loops]
+            for(int j=7; j>=3+I; j--) {
+            ^~~
+            VITIS_LOOP_2277_4: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16828:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16835:17: warning: Added loop label VITIS_LOOP_2284_5:   [xilinx-label-all-loops]
+                for(int j=7; j>=3+I; j--) {
+                ^~~
+                VITIS_LOOP_2284_5: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16835:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16839:17: warning: Added loop label VITIS_LOOP_2288_6:   [xilinx-label-all-loops]
+                for(int j=I+2; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2288_6: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16839:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16857:9: warning: Added loop label VITIS_LOOP_2306_7:   [xilinx-label-all-loops]
+        for(int j=11; j<16; j++) {
+        ^~~
+        VITIS_LOOP_2306_7: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16857:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16912:13: warning: Added loop label VITIS_LOOP_2361_8:   [xilinx-label-all-loops]
+            for(int j=15; j>=7+I; j--) {
+            ^~~
+            VITIS_LOOP_2361_8: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16912:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16919:17: warning: Added loop label VITIS_LOOP_2368_9:   [xilinx-label-all-loops]
+                for(int j=15; j>=7+I; j--) {
+                ^~~
+                VITIS_LOOP_2368_9: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16919:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16923:17: warning: Added loop label VITIS_LOOP_2372_10:   [xilinx-label-all-loops]
+                for(int j=6+I; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2372_10: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16923:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16941:9: warning: Added loop label VITIS_LOOP_2390_11:   [xilinx-label-all-loops]
+        for(int j=20; j<32; j++) {
+        ^~~
+        VITIS_LOOP_2390_11: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:16941:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17030:13: warning: Added loop label VITIS_LOOP_2479_12:   [xilinx-label-all-loops]
+            for(int j=31; j>=I+15; j--) {
+            ^~~
+            VITIS_LOOP_2479_12: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17030:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17037:17: warning: Added loop label VITIS_LOOP_2486_13:   [xilinx-label-all-loops]
+                for(int j=31; j>=I+15; j--) {
+                ^~~
+                VITIS_LOOP_2486_13: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17037:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17041:17: warning: Added loop label VITIS_LOOP_2490_14:   [xilinx-label-all-loops]
+                for(int j=I+14; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2490_14: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17041:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17051:9: warning: Added loop label VITIS_LOOP_2500_15:   [xilinx-label-all-loops]
+        for(int j=32-F; j<32+I; j++) {
+        ^~~
+        VITIS_LOOP_2500_15: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17051:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17055:9: warning: Added loop label VITIS_LOOP_2504_16:   [xilinx-label-all-loops]
+        for(int j=32+I; j<=64; j++) {
+        ^~~
+        VITIS_LOOP_2504_16: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17055:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17066:9: warning: Added loop label VITIS_LOOP_2515_17:   [xilinx-label-all-loops]
+        for(int j=37; j<64; j++) {
+        ^~~
+        VITIS_LOOP_2515_17: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17066:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17074:17: warning: Added loop label VITIS_LOOP_2523_18:   [xilinx-label-all-loops]
+                for(int j=0; j<64; j++) {
+                ^~~
+                VITIS_LOOP_2523_18: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17074:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17399:13: warning: Added loop label VITIS_LOOP_2848_19:   [xilinx-label-all-loops]
+            for(int j=63; j>=I+31; j--) {
+            ^~~
+            VITIS_LOOP_2848_19: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17399:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17406:17: warning: Added loop label VITIS_LOOP_2855_20:   [xilinx-label-all-loops]
+                for(int j=63; j>=I+31; j--) {
+                ^~~
+                VITIS_LOOP_2855_20: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17406:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17410:17: warning: Added loop label VITIS_LOOP_2859_21:   [xilinx-label-all-loops]
+                for(int j=I+30; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2859_21: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17410:17: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17498:4: warning: Added loop label VITIS_LOOP_2947_1:   [xilinx-label-all-loops]
+   for(int j = 5; j>=I_+2; j--) {
+   ^~~
+   VITIS_LOOP_2947_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17498:4: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17505:5: warning: Added loop label VITIS_LOOP_2954_2:   [xilinx-label-all-loops]
+    for(int j = 5; j>=I_+2; j--) {
+    ^~~
+    VITIS_LOOP_2954_2: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17505:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17509:5: warning: Added loop label VITIS_LOOP_2958_3:   [xilinx-label-all-loops]
+    for(int j = I_+1; j>=0; j--) {
+    ^~~
+    VITIS_LOOP_2958_3: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17509:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17524:3: warning: Added loop label VITIS_LOOP_2973_4:   [xilinx-label-all-loops]
+  for(int j = 11; j >=7; j--) {
+  ^~~
+  VITIS_LOOP_2973_4: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17524:3: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17556:4: warning: Added loop label VITIS_LOOP_3005_5:   [xilinx-label-all-loops]
+   for(int j = 11; j >= I_+5; j--) {
+   ^~~
+   VITIS_LOOP_3005_5: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17556:4: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17563:5: warning: Added loop label VITIS_LOOP_3012_6:   [xilinx-label-all-loops]
+    for(int j = 11; j>= I_+5; j--) {
+    ^~~
+    VITIS_LOOP_3012_6: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17563:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17567:5: warning: Added loop label VITIS_LOOP_3016_7:   [xilinx-label-all-loops]
+    for(int j = I_+4; j>=0; j--) {
+    ^~~
+    VITIS_LOOP_3016_7: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17567:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17582:3: warning: Added loop label VITIS_LOOP_3031_8:   [xilinx-label-all-loops]
+  for(int j = 25; j>=15; j--) {
+  ^~~
+  VITIS_LOOP_3031_8: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17582:3: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17632:4: warning: Added loop label VITIS_LOOP_3081_9:   [xilinx-label-all-loops]
+   for(int j = 25; j>= I_+12; j--) {
+   ^~~
+   VITIS_LOOP_3081_9: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17632:4: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17639:5: warning: Added loop label VITIS_LOOP_3088_10:   [xilinx-label-all-loops]
+    for(int j = 25; j>=I_+12; j--) {
+    ^~~
+    VITIS_LOOP_3088_10: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17639:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17643:5: warning: Added loop label VITIS_LOOP_3092_11:   [xilinx-label-all-loops]
+    for(int j = I_+11; j>=0; j--) {
+    ^~~
+    VITIS_LOOP_3092_11: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17643:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17658:3: warning: Added loop label VITIS_LOOP_3107_12:   [xilinx-label-all-loops]
+  for(int j = 51; j >= 29; j--) {
+  ^~~
+  VITIS_LOOP_3107_12: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17658:3: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17795:4: warning: Added loop label VITIS_LOOP_3244_13:   [xilinx-label-all-loops]
+   for(int j = 51; j >= 25 + I_; j--) {
+   ^~~
+   VITIS_LOOP_3244_13: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17795:4: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17802:5: warning: Added loop label VITIS_LOOP_3251_14:   [xilinx-label-all-loops]
+    for(int j = 51; j>=25 + I_; j--) {
+    ^~~
+    VITIS_LOOP_3251_14: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17802:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17806:5: warning: Added loop label VITIS_LOOP_3255_15:   [xilinx-label-all-loops]
+    for(int j = 24 + I_; j >= 0; j--) {
+    ^~~
+    VITIS_LOOP_3255_15: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17806:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17821:3: warning: Added loop label VITIS_LOOP_3270_16:   [xilinx-label-all-loops]
+  for(int j = 63; j >= 36; j--) {
+  ^~~
+  VITIS_LOOP_3270_16: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17821:3: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17981:4: warning: Added loop label VITIS_LOOP_3430_17:   [xilinx-label-all-loops]
+   for(int j = 63; j >= 31 + I_; j--) {
+   ^~~
+   VITIS_LOOP_3430_17: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17981:4: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17988:5: warning: Added loop label VITIS_LOOP_3437_18:   [xilinx-label-all-loops]
+    for(int j = 63; j >= 31 + I_; j--) {
+    ^~~
+    VITIS_LOOP_3437_18: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17988:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17992:5: warning: Added loop label VITIS_LOOP_3441_19:   [xilinx-label-all-loops]
+    for(int j = 30 + I_; j >= 0; j--) {
+    ^~~
+    VITIS_LOOP_3441_19: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:17992:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:18707:13: warning: Added loop label VITIS_LOOP_729_1:   [xilinx-label-all-loops]
+            for (b_exp = I_-1; b_exp >= -F_; b_exp--) {
+            ^~~
+            VITIS_LOOP_729_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:18707:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:18925:13: warning: Added loop label VITIS_LOOP_947_1:   [xilinx-label-all-loops]
+            for (b_exp = I_-1; b_exp >= -F_; b_exp--) {
+            ^~~
+            VITIS_LOOP_947_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:18925:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:19342:13: warning: Added loop label VITIS_LOOP_1371_1:   [xilinx-label-all-loops]
+            for (b_exp = I_-1; b_exp >= -F_; b_exp--) {
+            ^~~
+            VITIS_LOOP_1371_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:19342:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:19656:9: warning: Added loop label VITIS_LOOP_266_1:   [xilinx-label-all-loops]
+        for ( int pos = msbr-1; pos >= 0; pos-- ) {
+        ^~~
+        VITIS_LOOP_266_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:19656:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:19684:9: warning: Added loop label VITIS_LOOP_294_2:   [xilinx-label-all-loops]
+        for ( int pos = -1; pos >= -F_-1; pos-- ) {
+        ^~~
+        VITIS_LOOP_294_2: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:19684:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20379:13: warning: Added loop label VITIS_LOOP_74_1:   [xilinx-label-all-loops]
+            for (int j = 0; j < W_-1; j++){
+            ^~~
+            VITIS_LOOP_74_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20379:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20432:5: warning: Added loop label VITIS_LOOP_135_2:   [xilinx-label-all-loops]
+    for (int j = F_l+F_+I_m-1; j < F_l+W_+5; j++){
+    ^~~
+    VITIS_LOOP_135_2: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20432:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20446:13: warning: Added loop label VITIS_LOOP_149_3:   [xilinx-label-all-loops]
+            for (int j = WO_m-1; j >= W_-1; j--) {
+            ^~~
+            VITIS_LOOP_149_3: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20446:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20476:13: warning: Added loop label VITIS_LOOP_179_4:   [xilinx-label-all-loops]
+            for (int j = W_-2; j >= 0; j--){
+            ^~~
+            VITIS_LOOP_179_4: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20476:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20561:12: warning: Added loop label VITIS_LOOP_307_1:   [xilinx-label-all-loops]
+           for(int i = wf_log+we_log-2; i > WI_e - 2; --i) {
+           ^~~
+           VITIS_LOOP_307_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20561:12: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20581:16: warning: Added loop label VITIS_LOOP_327_2:   [xilinx-label-all-loops]
+               for (int j = WO_e-1; j >= W_-1; j--) {
+               ^~~
+               VITIS_LOOP_327_2: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20581:16: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20595:20: warning: Added loop label VITIS_LOOP_341_3:   [xilinx-label-all-loops]
+                   for(int i = 0; i < W_-1; ++i) {
+                   ^~~
+                   VITIS_LOOP_341_3: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20595:20: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20688:12: warning: Added loop label VITIS_LOOP_459_1:   [xilinx-label-all-loops]
+           for (int j =WO_d-1; j >= W_-1; j--) {
+           ^~~
+           VITIS_LOOP_459_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20688:12: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20702:15: warning: Added loop label VITIS_LOOP_473_2:   [xilinx-label-all-loops]
+              for(int i = 0; i < W_-1; ++i) {
+              ^~~
+              VITIS_LOOP_473_2: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20702:15: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20815:13: warning: Added loop label VITIS_LOOP_59_1:   [xilinx-label-all-loops]
+            for (int i = 0; i < W_-1; i++){
+            ^~~
+            VITIS_LOOP_59_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20815:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20939:13: warning: Added loop label VITIS_LOOP_209_1:   [xilinx-label-all-loops]
+            for (int i = 0; i < W_-1; i++){
+            ^~~
+            VITIS_LOOP_209_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20939:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20994:13: warning: Added loop label VITIS_LOOP_274_1:   [xilinx-label-all-loops]
+            for (int i = 0; i < W_-1; i++){
+            ^~~
+            VITIS_LOOP_274_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:20994:13: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21499:2: warning: Added loop label VITIS_LOOP_42_1:   [xilinx-label-all-loops]
+ for (int i=0; i<W_;i++)
+ ^~~
+ VITIS_LOOP_42_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21499:2: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21510:2: warning: Added loop label VITIS_LOOP_53_1:   [xilinx-label-all-loops]
+ for (int i=0; i<W_;i++)
+ ^~~
+ VITIS_LOOP_53_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21510:2: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21521:2: warning: Added loop label VITIS_LOOP_64_1:   [xilinx-label-all-loops]
+ for (int i=0; i<I_;i++)
+ ^~~
+ VITIS_LOOP_64_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21521:2: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21532:2: warning: Added loop label VITIS_LOOP_75_1:   [xilinx-label-all-loops]
+ for (int i=0; i<I_;i++)
+ ^~~
+ VITIS_LOOP_75_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21532:2: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21543:2: warning: Added loop label VITIS_LOOP_86_1:   [xilinx-label-all-loops]
+ for (int i=0; i<W_;i++)
+ ^~~
+ VITIS_LOOP_86_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21543:2: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21554:2: warning: Added loop label VITIS_LOOP_97_1:   [xilinx-label-all-loops]
+ for (int i=0; i<W_;i++)
+ ^~~
+ VITIS_LOOP_97_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21554:2: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21565:2: warning: Added loop label VITIS_LOOP_108_1:   [xilinx-label-all-loops]
+ for (int i=0; i<I_;i++)
+ ^~~
+ VITIS_LOOP_108_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21565:2: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21576:2: warning: Added loop label VITIS_LOOP_119_1:   [xilinx-label-all-loops]
+ for (int i=0; i<I_;i++)
+ ^~~
+ VITIS_LOOP_119_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:21576:2: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:23877:12: warning: Added loop label VITIS_LOOP_23_1:   [xilinx-label-all-loops]
+           for(int i = 0; i < W_-1; ++i) {
+           ^~~
+           VITIS_LOOP_23_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:23877:12: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:23941:7: warning: Added loop label VITIS_LOOP_66_1:   [xilinx-label-all-loops]
+      for(int pos = msbr - 1 ; pos >= -F-1; pos--) {
+      ^~~
+      VITIS_LOOP_66_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:23941:7: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:24058:9: warning: Added loop label VITIS_LOOP_75_1:   [xilinx-label-all-loops]
+        for(int pos = msbr - 1; pos >= 0; pos--) {
+        ^~~
+        VITIS_LOOP_75_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:24058:9: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:24083:5: warning: Added loop label VITIS_LOOP_107_2:   [xilinx-label-all-loops]
+    for(int pos = -1; pos >= -F-1; pos--) {
+    ^~~
+    VITIS_LOOP_107_2: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:24083:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:24153:8: warning: Added loop label VITIS_LOOP_195_3:   [xilinx-label-all-loops]
+       for(int i = 0; i < W - 1; ++i) {
+       ^~~
+       VITIS_LOOP_195_3: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:24153:8: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42869:5: warning: Added loop label VITIS_LOOP_118_1:   [xilinx-label-all-loops]
+    for (size_t i = 0; i < N; ++i) {
+    ^~~
+    VITIS_LOOP_118_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42869:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42885:5: warning: Added loop label VITIS_LOOP_134_1:   [xilinx-label-all-loops]
+    for (size_t i = 0; i < N; ++i) {
+    ^~~
+    VITIS_LOOP_134_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42885:5: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42901:75: warning: Added loop label VITIS_LOOP_160_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator ++() { pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                          ^~~
+                                                                          VITIS_LOOP_160_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42901:75: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42906:75: warning: Added loop label VITIS_LOOP_161_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator --() { pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                          ^~~
+                                                                          VITIS_LOOP_161_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42906:75: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42915:106: warning: Added loop label VITIS_LOOP_189_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator +=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_189_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42915:106: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42920:106: warning: Added loop label VITIS_LOOP_190_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator -=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_190_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42920:106: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42925:106: warning: Added loop label VITIS_LOOP_191_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator *=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_191_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42925:106: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42930:106: warning: Added loop label VITIS_LOOP_192_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator /=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_192_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42930:106: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42935:106: warning: Added loop label VITIS_LOOP_193_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator %=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_193_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42935:106: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42940:106: warning: Added loop label VITIS_LOOP_194_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator &=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_194_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42940:106: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42945:106: warning: Added loop label VITIS_LOOP_195_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator |=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_195_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42945:106: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42950:106: warning: Added loop label VITIS_LOOP_196_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator ^=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_196_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42950:106: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42955:107: warning: Added loop label VITIS_LOOP_197_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator <<=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                          ^~~
+                                                                                                          VITIS_LOOP_197_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42955:107: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42960:107: warning: Added loop label VITIS_LOOP_198_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator >>=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                          ^~~
+                                                                                                          VITIS_LOOP_198_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42960:107: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42966:91: warning: Added loop label VITIS_LOOP_213_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) T reduce_add() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                                          ^~~
+                                                                                          VITIS_LOOP_213_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42966:91: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42971:92: warning: Added loop label VITIS_LOOP_214_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) T reduce_mult() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                                           ^~~
+                                                                                           VITIS_LOOP_214_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42971:92: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42976:91: warning: Added loop label VITIS_LOOP_215_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) T reduce_and() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                                          ^~~
+                                                                                          VITIS_LOOP_215_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42976:91: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42981:90: warning: Added loop label VITIS_LOOP_216_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) T reduce_or() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                                         ^~~
+                                                                                         VITIS_LOOP_216_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42981:90: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42986:91: warning: Added loop label VITIS_LOOP_217_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) T reduce_xor() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                                          ^~~
+                                                                                          VITIS_LOOP_217_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42986:91: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42992:132: warning: Added loop label VITIS_LOOP_247_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) friend bool operator <(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                                   ^~~
+                                                                                                                                   VITIS_LOOP_247_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42992:132: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42997:133: warning: Added loop label VITIS_LOOP_248_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) friend bool operator <=(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                                    ^~~
+                                                                                                                                    VITIS_LOOP_248_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:42997:133: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:43002:133: warning: Added loop label VITIS_LOOP_249_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) friend bool operator ==(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                                    ^~~
+                                                                                                                                    VITIS_LOOP_249_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:43002:133: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:43007:133: warning: Added loop label VITIS_LOOP_250_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) friend bool operator !=(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                                    ^~~
+                                                                                                                                    VITIS_LOOP_250_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:43007:133: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:43012:133: warning: Added loop label VITIS_LOOP_251_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) friend bool operator >=(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                                    ^~~
+                                                                                                                                    VITIS_LOOP_251_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:43012:133: note: FIX-IT applied suggested code changes
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:43017:132: warning: Added loop label VITIS_LOOP_252_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) friend bool operator >(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                                   ^~~
+                                                                                                                                   VITIS_LOOP_252_1: 
+E:\DeiTCPP\Deit_cpp\solution1\.autopilot\db\conv.pp.0.cpp:43017:132: note: FIX-IT applied suggested code changes

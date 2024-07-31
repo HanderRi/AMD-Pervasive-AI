@@ -1,0 +1,8 @@
+---
+MainSourceFile:  'E:/DeiTCPP/Deit_cpp/solution1/.autopilot/db/conv.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-6] As the loop counter is not increased by 1, the compiler may not successfully process the dataflow loop'
+    FileOffset:      '171:273'
+    FilePath:        Deit_cpp/src/conv.cpp
+...

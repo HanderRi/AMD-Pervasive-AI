@@ -1,0 +1,144 @@
+
+
+================================================================
+== Vitis HLS Report for 'dataflow_in_loop_ln171_for_block_y'
+================================================================
+* Date:           Wed Jul 31 16:58:45 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        Deit_cpp
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+-------+----------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline |
+    |   min   |   max   |    min   |    max   |  min  |  max  |   Type   |
+    +---------+---------+----------+----------+-------+-------+----------+
+    |    27714|    27714|  0.277 ms|  0.277 ms|  27673|  27673|  dataflow|
+    +---------+---------+----------+----------+-------+-------+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 4, States = { 1 2 3 4 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.67>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%y_block_read = read i4 @_ssdm_op_Read.ap_auto.i4, i4 %y_block"   --->   Operation 5 'read' 'y_block_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%x_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %x"   --->   Operation 6 'read' 'x_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%empty = trunc i4 %y_block_read"   --->   Operation 7 'trunc' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%patches31 = alloca i64 1"   --->   Operation 8 'alloca' 'patches31' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [2/2] (3.67ns)   --->   "%call_ln178 = call void @patch_embed_accumulate<16u, 128u, 8u>, i256 %inout1, i64 %x_read, i512 %patches31, i3 %empty, i128 %patch_embed_bias, i2048 %patch_embed_weights" [Deit_cpp/src/conv.cpp:178]   --->   Operation 9 'call' 'call_ln178' <Predicate = true> <Delay = 3.67> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 10 [1/2] (0.00ns)   --->   "%call_ln178 = call void @patch_embed_accumulate<16u, 128u, 8u>, i256 %inout1, i64 %x_read, i512 %patches31, i3 %empty, i128 %patch_embed_bias, i2048 %patch_embed_weights" [Deit_cpp/src/conv.cpp:178]   --->   Operation 10 'call' 'call_ln178' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 4.54>
+ST_3 : Operation 11 [1/1] (0.00ns)   --->   "%pos_embed_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %pos_embed"   --->   Operation 11 'read' 'pos_embed_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 12 [1/1] (0.00ns)   --->   "%out_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %out_r"   --->   Operation 12 'read' 'out_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 13 [2/2] (4.54ns)   --->   "%call_ln180 = call void @patch_embed_output, i512 %patches31, i256 %inout2, i64 %out_read, i256 %weights, i64 %pos_embed_read, i3 %empty" [Deit_cpp/src/conv.cpp:180]   --->   Operation 13 'call' 'call_ln180' <Predicate = true> <Delay = 4.54> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %weights, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_11, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %inout2, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_8, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %inout1, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_14, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 17 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln173 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_24" [Deit_cpp/src/conv.cpp:173]   --->   Operation 17 'specdataflowpipeline' 'specdataflowpipeline_ln173' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 18 [1/2] (0.00ns)   --->   "%call_ln180 = call void @patch_embed_output, i512 %patches31, i256 %inout2, i64 %out_read, i256 %weights, i64 %pos_embed_read, i3 %empty" [Deit_cpp/src/conv.cpp:180]   --->   Operation 18 'call' 'call_ln180' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 19 [1/1] (0.00ns)   --->   "%ret_ln180 = ret" [Deit_cpp/src/conv.cpp:180]   --->   Operation 19 'ret' 'ret_ln180' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 3.68ns
+The critical path consists of the following:
+	wire read operation ('y_block_read') on port 'y_block' [12]  (0 ns)
+	'call' operation ('call_ln178', Deit_cpp/src/conv.cpp:178) to 'patch_embed_accumulate<16u, 128u, 8u>' [20]  (3.68 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 4.55ns
+The critical path consists of the following:
+	wire read operation ('pos_embed_read') on port 'pos_embed' [10]  (0 ns)
+	'call' operation ('call_ln180', Deit_cpp/src/conv.cpp:180) to 'patch_embed_output' [21]  (4.55 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

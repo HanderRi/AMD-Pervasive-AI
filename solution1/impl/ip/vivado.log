@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Wed Jul 31 17:40:04 2024
+# Process ID: 17536
+# Current directory: E:/DeiTCPP/Deit_cpp/solution1/impl/ip
+# Command line: vivado.exe -notrace -mode batch -source run_ippack.tcl
+# Log file: E:/DeiTCPP/Deit_cpp/solution1/impl/ip/vivado.log
+# Journal file: E:/DeiTCPP/Deit_cpp/solution1/impl/ip\vivado.jou
+# Running On: HanLi-DESKTOP, OS: Windows, CPU Frequency: 1992 MHz, CPU Physical cores: 4, Host memory: 17061 MB
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace
+ipx::create_core: Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 1007.824 ; gain = 120.410
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2022.2/data/ip'.
+ipx::archive_core: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1035.328 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 31 17:41:59 2024...

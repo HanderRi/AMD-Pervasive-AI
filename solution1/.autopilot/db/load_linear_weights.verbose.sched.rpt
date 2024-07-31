@@ -1,0 +1,189 @@
+
+
+================================================================
+== Vitis HLS Report for 'load_linear_weights'
+================================================================
+* Date:           Wed Jul 31 16:59:45 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        Deit_cpp
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+---------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |    Interval   | Pipeline|
+    |   min   |   max   |    min    |    max    | min |   max   |   Type  |
+    +---------+---------+-----------+-----------+-----+---------+---------+
+    |        6|  1047568|  60.000 ns|  10.476 ms|    6|  1047568|       no|
+    +---------+---------+-----------+-----------+-----+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.32>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%in_dim_offset_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %in_dim_offset"   --->   Operation 6 'read' 'in_dim_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%out_dim_offset_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %out_dim_offset"   --->   Operation 7 'read' 'out_dim_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%empty = trunc i32 %out_dim_offset_read"   --->   Operation 8 'trunc' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%out_dim_offset_cast_cast_cast = zext i10 %empty"   --->   Operation 9 'zext' 'out_dim_offset_cast_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%empty_203 = trunc i32 %in_dim_offset_read"   --->   Operation 10 'trunc' 'empty_203' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.78ns)   --->   "%add_ln70 = add i10 %empty_203, i10 15" [Deit_cpp/src/../include/util.hpp:70]   --->   Operation 11 'add' 'add_ln70' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%num_src_col_blocks = partselect i6 @_ssdm_op_PartSelect.i6.i10.i32.i32, i10 %add_ln70, i32 4, i32 9" [Deit_cpp/src/../include/util.hpp:70]   --->   Operation 12 'partselect' 'num_src_col_blocks' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%zext_ln27 = zext i6 %num_src_col_blocks" [Deit_cpp/src/linear.cpp:27]   --->   Operation 13 'zext' 'zext_ln27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [4/4] (0.53ns) (root node of the DSP)   --->   "%num_src_blocks = mul i16 %zext_ln27, i16 %out_dim_offset_cast_cast_cast" [Deit_cpp/src/linear.cpp:29]   --->   Operation 14 'mul' 'num_src_blocks' <Predicate = true> <Delay = 0.53> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 2 <SV = 1> <Delay = 0.53>
+ST_2 : Operation 15 [3/4] (0.53ns) (root node of the DSP)   --->   "%num_src_blocks = mul i16 %zext_ln27, i16 %out_dim_offset_cast_cast_cast" [Deit_cpp/src/linear.cpp:29]   --->   Operation 15 'mul' 'num_src_blocks' <Predicate = true> <Delay = 0.53> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 3 <SV = 2> <Delay = 0.53>
+ST_3 : Operation 16 [2/4] (0.53ns) (root node of the DSP)   --->   "%num_src_blocks = mul i16 %zext_ln27, i16 %out_dim_offset_cast_cast_cast" [Deit_cpp/src/linear.cpp:29]   --->   Operation 16 'mul' 'num_src_blocks' <Predicate = true> <Delay = 0.53> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 4 <SV = 3> <Delay = 0.78>
+ST_4 : Operation 17 [1/1] (0.00ns)   --->   "%weights_src_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %weights_src"   --->   Operation 17 'read' 'weights_src_read' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 18 [1/1] (0.78ns)   --->   "%last_src_col_block = add i6 %num_src_col_blocks, i6 63" [Deit_cpp/src/linear.cpp:28]   --->   Operation 18 'add' 'last_src_col_block' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 19 [1/4] (0.00ns) (root node of the DSP)   --->   "%num_src_blocks = mul i16 %zext_ln27, i16 %out_dim_offset_cast_cast_cast" [Deit_cpp/src/linear.cpp:29]   --->   Operation 19 'mul' 'num_src_blocks' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 20 [1/1] (0.78ns)   --->   "%last_src_row = add i10 %empty, i10 1023" [Deit_cpp/src/linear.cpp:30]   --->   Operation 20 'add' 'last_src_row' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 21 [1/1] (0.00ns)   --->   "%trunc_ln46 = trunc i64 %weights_src_read" [Deit_cpp/src/linear.cpp:46]   --->   Operation 21 'trunc' 'trunc_ln46' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 22 [1/1] (0.78ns)   --->   "%add_ln46 = add i5 %trunc_ln46, i5 2" [Deit_cpp/src/linear.cpp:46]   --->   Operation 22 'add' 'add_ln46' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 23 [1/1] (0.78ns)   --->   "%add_ln46_1 = add i5 %trunc_ln46, i5 4" [Deit_cpp/src/linear.cpp:46]   --->   Operation 23 'add' 'add_ln46_1' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 24 [1/1] (0.78ns)   --->   "%add_ln46_2 = add i5 %trunc_ln46, i5 6" [Deit_cpp/src/linear.cpp:46]   --->   Operation 24 'add' 'add_ln46_2' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 25 [1/1] (0.78ns)   --->   "%add_ln46_3 = add i5 %trunc_ln46, i5 8" [Deit_cpp/src/linear.cpp:46]   --->   Operation 25 'add' 'add_ln46_3' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 26 [1/1] (0.78ns)   --->   "%add_ln46_4 = add i5 %trunc_ln46, i5 10" [Deit_cpp/src/linear.cpp:46]   --->   Operation 26 'add' 'add_ln46_4' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 27 [1/1] (0.78ns)   --->   "%add_ln46_5 = add i5 %trunc_ln46, i5 12" [Deit_cpp/src/linear.cpp:46]   --->   Operation 27 'add' 'add_ln46_5' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 28 [1/1] (0.78ns)   --->   "%add_ln46_6 = add i5 %trunc_ln46, i5 14" [Deit_cpp/src/linear.cpp:46]   --->   Operation 28 'add' 'add_ln46_6' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 29 [1/1] (0.19ns)   --->   "%xor_ln46 = xor i5 %trunc_ln46, i5 16" [Deit_cpp/src/linear.cpp:46]   --->   Operation 29 'xor' 'xor_ln46' <Predicate = true> <Delay = 0.19> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.19> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 30 [1/1] (0.78ns)   --->   "%add_ln46_7 = add i5 %trunc_ln46, i5 18" [Deit_cpp/src/linear.cpp:46]   --->   Operation 30 'add' 'add_ln46_7' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 31 [1/1] (0.78ns)   --->   "%add_ln46_8 = add i5 %trunc_ln46, i5 20" [Deit_cpp/src/linear.cpp:46]   --->   Operation 31 'add' 'add_ln46_8' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 32 [1/1] (0.78ns)   --->   "%add_ln46_9 = add i5 %trunc_ln46, i5 22" [Deit_cpp/src/linear.cpp:46]   --->   Operation 32 'add' 'add_ln46_9' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 33 [1/1] (0.78ns)   --->   "%add_ln46_10 = add i5 %trunc_ln46, i5 24" [Deit_cpp/src/linear.cpp:46]   --->   Operation 33 'add' 'add_ln46_10' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 34 [1/1] (0.78ns)   --->   "%add_ln46_11 = add i5 %trunc_ln46, i5 26" [Deit_cpp/src/linear.cpp:46]   --->   Operation 34 'add' 'add_ln46_11' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 35 [1/1] (0.78ns)   --->   "%add_ln46_12 = add i5 %trunc_ln46, i5 28" [Deit_cpp/src/linear.cpp:46]   --->   Operation 35 'add' 'add_ln46_12' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 36 [1/1] (0.78ns)   --->   "%add_ln46_13 = add i5 %trunc_ln46, i5 30" [Deit_cpp/src/linear.cpp:46]   --->   Operation 36 'add' 'add_ln46_13' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %trunc_ln46, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 37 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%shl_ln65_1 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln46, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 38 'bitconcatenate' 'shl_ln65_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%shl_ln65_2 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln46_1, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 39 'bitconcatenate' 'shl_ln65_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "%shl_ln65_3 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln46_2, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 40 'bitconcatenate' 'shl_ln65_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%shl_ln65_4 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln46_3, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 41 'bitconcatenate' 'shl_ln65_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%shl_ln65_5 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln46_4, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 42 'bitconcatenate' 'shl_ln65_5' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%shl_ln65_6 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln46_5, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 43 'bitconcatenate' 'shl_ln65_6' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "%shl_ln65_7 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln46_6, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 44 'bitconcatenate' 'shl_ln65_7' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "%shl_ln65_8 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %xor_ln46, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 45 'bitconcatenate' 'shl_ln65_8' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "%shl_ln65_9 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln46_7, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 46 'bitconcatenate' 'shl_ln65_9' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "%shl_ln65_s = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln46_8, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 47 'bitconcatenate' 'shl_ln65_s' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 48 [1/1] (0.00ns)   --->   "%shl_ln65_10 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln46_9, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 48 'bitconcatenate' 'shl_ln65_10' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%shl_ln65_11 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln46_10, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 49 'bitconcatenate' 'shl_ln65_11' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 50 [1/1] (0.00ns)   --->   "%shl_ln65_12 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln46_11, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 50 'bitconcatenate' 'shl_ln65_12' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 51 [1/1] (0.00ns)   --->   "%shl_ln65_13 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln46_12, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 51 'bitconcatenate' 'shl_ln65_13' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "%shl_ln65_14 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln46_13, i3 0" [Deit_cpp/src/linear.cpp:65]   --->   Operation 52 'bitconcatenate' 'shl_ln65_14' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 53 [2/2] (0.00ns)   --->   "%call_ln29 = call void @load_linear_weights_Pipeline__ln46_for_each_src_block, i16 %num_src_blocks, i10 %last_src_row, i64 %weights_src_read, i6 %last_src_col_block, i256 %weights, i8 %shl_ln, i8 %shl_ln65_1, i8 %shl_ln65_2, i8 %shl_ln65_3, i8 %shl_ln65_4, i8 %shl_ln65_5, i8 %shl_ln65_6, i8 %shl_ln65_7, i8 %shl_ln65_8, i8 %shl_ln65_9, i8 %shl_ln65_s, i8 %shl_ln65_10, i8 %shl_ln65_11, i8 %shl_ln65_12, i8 %shl_ln65_13, i8 %shl_ln65_14, i4096 %weights_dst" [Deit_cpp/src/linear.cpp:29]   --->   Operation 53 'call' 'call_ln29' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %weights, void @empty_6, i32 0, i32 0, void @empty_24, i32 0, i32 1, void @empty_11, void @empty_7, void @empty_24, i32 16, i32 16, i32 16, i32 16, void @empty_24, void @empty_24, i32 4294967295, i32 0"   --->   Operation 54 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 55 [1/2] (0.00ns)   --->   "%call_ln29 = call void @load_linear_weights_Pipeline__ln46_for_each_src_block, i16 %num_src_blocks, i10 %last_src_row, i64 %weights_src_read, i6 %last_src_col_block, i256 %weights, i8 %shl_ln, i8 %shl_ln65_1, i8 %shl_ln65_2, i8 %shl_ln65_3, i8 %shl_ln65_4, i8 %shl_ln65_5, i8 %shl_ln65_6, i8 %shl_ln65_7, i8 %shl_ln65_8, i8 %shl_ln65_9, i8 %shl_ln65_s, i8 %shl_ln65_10, i8 %shl_ln65_11, i8 %shl_ln65_12, i8 %shl_ln65_13, i8 %shl_ln65_14, i4096 %weights_dst" [Deit_cpp/src/linear.cpp:29]   --->   Operation 55 'call' 'call_ln29' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 56 [1/1] (0.00ns)   --->   "%ret_ln92 = ret" [Deit_cpp/src/linear.cpp:92]   --->   Operation 56 'ret' 'ret_ln92' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.32ns
+The critical path consists of the following:
+	wire read operation ('in_dim_offset_read') on port 'in_dim_offset' [6]  (0 ns)
+	'add' operation ('add_ln70', Deit_cpp/src/../include/util.hpp:70) [13]  (0.787 ns)
+	'mul' operation of DSP[17] ('num_src_blocks', Deit_cpp/src/linear.cpp:29) [17]  (0.535 ns)
+
+ <State 2>: 0.535ns
+The critical path consists of the following:
+	'mul' operation of DSP[17] ('num_src_blocks', Deit_cpp/src/linear.cpp:29) [17]  (0.535 ns)
+
+ <State 3>: 0.535ns
+The critical path consists of the following:
+	'mul' operation of DSP[17] ('num_src_blocks', Deit_cpp/src/linear.cpp:29) [17]  (0.535 ns)
+
+ <State 4>: 0.789ns
+The critical path consists of the following:
+	wire read operation ('weights_src_read') on port 'weights_src' [8]  (0 ns)
+	'add' operation ('add_ln46', Deit_cpp/src/linear.cpp:46) [20]  (0.789 ns)
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
